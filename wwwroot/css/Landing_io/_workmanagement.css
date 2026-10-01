@@ -1,0 +1,541 @@
+/* =========================================================
+   TASKFLOW — WORK MANAGEMENT
+   Standalone section for Views/Shared/Landing/_WorkManagement.cshtml
+========================================================= */
+.tf-work-management {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #fff;
+    padding: 110px 0 125px;
+    color: #24152d
+}
+
+.wm-bg {
+    position: absolute;
+    pointer-events: none;
+    filter: blur(10px);
+    opacity: .7;
+    z-index: -1;
+    border-radius: 50%
+}
+
+.wm-bg-top {
+    width: 420px;
+    height: 420px;
+    right: -130px;
+    top: 30px;
+    background: radial-gradient(circle,rgba(185,102,235,.18),transparent 68%)
+}
+
+.wm-bg-bottom {
+    width: 500px;
+    height: 280px;
+    left: 280px;
+    bottom: -130px;
+    background: radial-gradient(circle,rgba(113,73,214,.16),transparent 68%)
+}
+
+.wm-container {
+    width: min(1280px,calc(100% - 48px));
+    margin: auto
+}
+
+.wm-switcher {
+    width: max-content;
+    margin: 0 auto 30px;
+    padding: 5px;
+    border: 1px solid #ead7f1;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 5px 18px rgba(72,25,93,.10);
+    display: flex;
+    gap: 2px
+}
+
+.wm-switcher-item {
+    border: 0;
+    background: transparent;
+    border-radius: 999px;
+    padding: 11px 19px;
+    color: #3d1b4d;
+    font-size: 16px;
+    font-weight: 750;
+    cursor: pointer;
+    transition: .2s
+}
+
+    .wm-switcher-item:hover, .wm-switcher-item.wm-active {
+        background: #f3e1fa
+    }
+
+.wm-heading {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 75px
+}
+
+    .wm-heading h2 {
+        margin: 0;
+        font-size: clamp(55px,5vw,52px);
+        line-height: 1.02;
+        letter-spacing: -2.8px;
+        font-weight: 850;
+        color: #23132d
+    }
+
+        .wm-heading h2 span {
+            background: linear-gradient(90deg,#5c167f,#a115d2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
+        }
+
+    .wm-heading p {
+        max-width: 680px;
+        margin: 22px auto 0;
+        font-size: 20px;
+        line-height: 1.45;
+        color: #4d4650
+    }
+
+.wm-content {
+    display: grid;
+    grid-template-columns: 350px minmax(0,1fr);
+    gap: 75px;
+    align-items: center
+}
+
+.wm-story {
+    display: flex;
+    flex-direction: column;
+    gap: 26px
+}
+
+.wm-story-item {
+    position: relative;
+    display: flex;
+    width: 100%;
+    border: 0;
+    background: none;
+    text-align: left;
+    padding: 0;
+    cursor: pointer;
+    color: #2d1835
+}
+
+.wm-story-line {
+    width: 4px;
+    min-width: 4px;
+    border-radius: 5px;
+    background: #eee3f1;
+    margin-right: 20px;
+    transition: .25s
+}
+
+.wm-story-copy {
+    display: flex;
+    flex-direction: column;
+    padding: 2px 0
+}
+
+    .wm-story-copy strong {
+        font-size: 22px;
+        line-height: 1.25;
+        font-weight: 800
+    }
+
+    .wm-story-copy small {
+        display: none;
+        margin-top: 10px;
+        font-size: 17px;
+        line-height: 1.45;
+        color: #4c4650;
+        max-width: 320px
+    }
+
+.wm-story-item.wm-selected .wm-story-line {
+    background: #7a18a7
+}
+
+.wm-story-item.wm-selected .wm-story-copy strong {
+    color: #7a18a7
+}
+
+.wm-story-item.wm-selected .wm-story-copy small {
+    display: block
+}
+
+.wm-link {
+    display: none;
+    margin-top: 12px;
+    font-size: 15px;
+    color: #4d7892;
+    font-weight: 700
+}
+
+.wm-story-item.wm-selected .wm-link {
+    display: inline-block
+}
+
+.wm-link b {
+    font-size: 18px;
+    margin-left: 4px
+}
+
+.wm-stat {
+    margin-top: 85px;
+    display: flex;
+    flex-direction: column;
+    max-width: 280px
+}
+
+    .wm-stat strong {
+        font-size: 70px;
+        line-height: .9;
+        letter-spacing: -3px;
+        background: linear-gradient(90deg,#4e126e,#8e17b7);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent
+    }
+
+    .wm-stat span {
+        font-size: 18px;
+        line-height: 1.25;
+        font-weight: 750;
+        margin-top: 14px
+    }
+
+.wm-product {
+    min-width: 0
+}
+
+.wm-window {
+    position: relative;
+    border: 4px solid #651078;
+    border-radius: 18px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 28px 70px rgba(61,19,75,.16)
+}
+
+.wm-window-bar {
+    height: 42px;
+    background: #641077;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    position: relative
+}
+
+.wm-dots {
+    display: flex;
+    gap: 7px
+}
+
+    .wm-dots i {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #f4a45e
+    }
+
+        .wm-dots i:nth-child(2) {
+            background: #f0c34e
+        }
+
+        .wm-dots i:nth-child(3) {
+            background: #60c878
+        }
+
+.wm-window-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    font-weight: 700
+}
+
+    .wm-window-title span {
+        opacity: .65;
+        margin-left: 5px;
+        font-weight: 500
+    }
+
+.wm-window-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 14px;
+    opacity: .8
+}
+
+.wm-appbar {
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 17px;
+    border-bottom: 1px solid #eee;
+    background: #fff
+}
+
+.wm-app-search {
+    font-size: 13px;
+    font-weight: 800
+}
+
+    .wm-app-search span {
+        margin-left: 7px;
+        color: #777;
+        font-weight: 500
+    }
+
+.wm-app-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    color: #8a858a
+}
+
+    .wm-app-actions button {
+        border: 1px solid #ddd;
+        background: #fff;
+        border-radius: 5px;
+        padding: 5px 9px;
+        font-weight: 700
+    }
+
+.wm-mini-avatar {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #ecb34c;
+    color: #fff;
+    font-weight: 800
+}
+
+    .wm-mini-avatar.second {
+        background: #5ca1c5;
+        margin-left: -7px
+    }
+
+.wm-board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px 20px 13px;
+    gap: 15px
+}
+
+    .wm-board-header h3 {
+        margin: 0;
+        font-size: 20px
+    }
+
+    .wm-board-header p {
+        margin: 5px 0 0;
+        color: #777;
+        font-size: 11px
+    }
+
+.wm-board-controls {
+    display: flex;
+    gap: 6px
+}
+
+    .wm-board-controls button {
+        border: 1px solid #e1dce2;
+        background: #fff;
+        border-radius: 6px;
+        padding: 6px 8px;
+        font-size: 10px
+    }
+
+    .wm-board-controls .active {
+        background: #f6eef8
+    }
+
+.wm-board {
+    display: grid;
+    grid-template-columns: repeat(4,minmax(150px,1fr));
+    gap: 6px;
+    padding: 0 14px 16px;
+    background: #fbfafa
+}
+
+.wm-column {
+    padding: 9px;
+    border-radius: 8px;
+    min-height: 330px
+}
+
+.wm-progress {
+    background: #fff0c8
+}
+
+.wm-urgent {
+    background: #ffdbe8
+}
+
+.wm-resolved {
+    background: #e2f4bb
+}
+
+.wm-ongoing {
+    background: #cdd3f7
+}
+
+.wm-column-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 3px 8px;
+    font-size: 12px
+}
+
+    .wm-column-head span {
+        opacity: .55
+    }
+
+.wm-task {
+    background: #fff;
+    border: 1px solid rgba(55,35,60,.14);
+    border-radius: 7px;
+    padding: 10px;
+    margin-bottom: 7px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.05)
+}
+
+    .wm-task h4 {
+        font-size: 12px;
+        line-height: 1.2;
+        margin: 0 0 8px
+    }
+
+    .wm-task p {
+        font-size: 8px;
+        color: #888;
+        margin: 0 0 8px
+    }
+
+    .wm-task div {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        flex-wrap: wrap;
+        font-size: 8px;
+        color: #777
+    }
+
+    .wm-task em {
+        font-style: normal;
+        background: #f1d2df;
+        border-radius: 4px;
+        padding: 2px 4px;
+        font-weight: 800;
+        color: #7c3150
+    }
+
+.wm-add {
+    border: 0;
+    background: transparent;
+    color: #604b67;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 3px
+}
+
+.wm-floating-add {
+    position: absolute;
+    right: 18px;
+    bottom: 17px;
+    border: 0;
+    border-radius: 999px;
+    background: #0e8c6d;
+    color: #fff;
+    padding: 11px 16px;
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 8px 18px rgba(14,140,109,.22);
+    cursor: pointer
+}
+
+    .wm-floating-add:hover {
+        transform: translateY(-1px)
+    }
+
+@media(max-width:1050px) {
+    .wm-content {
+        grid-template-columns: 1fr;
+        gap: 45px
+    }
+
+    .wm-story {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 18px
+    }
+
+    .wm-stat {
+        margin-top: 25px
+    }
+
+    .wm-product {
+        width: 100%
+    }
+}
+
+@media(max-width:760px) {
+    .tf-work-management {
+        padding: 75px 0
+    }
+
+    .wm-container {
+        width: min(100% - 28px,1280px)
+    }
+
+    .wm-switcher-item {
+        padding: 9px 11px;
+        font-size: 13px
+    }
+
+    .wm-heading {
+        margin-bottom: 50px
+    }
+
+        .wm-heading h2 {
+            font-size: 40px;
+            letter-spacing: -1.7px
+        }
+
+        .wm-heading p {
+            font-size: 17px
+        }
+
+    .wm-story {
+        display: flex
+    }
+
+    .wm-stat {
+        margin-top: 25px
+    }
+
+    .wm-board {
+        overflow-x: auto;
+        grid-template-columns: repeat(4,210px)
+    }
+
+    .wm-window {
+        overflow-x: auto
+    }
+
+    .wm-appbar, .wm-board-header {
+        min-width: 850px
+    }
+}

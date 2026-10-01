@@ -1,0 +1,644 @@
+/* =========================================================
+   TASKFLOW REGISTER PAGE
+   ========================================================= */
+
+:root {
+    --text-dark: #172d55;
+    --text-main: #294779;
+    --text-light: #6680b5;
+    --purple: #6537d5;
+    --purple-dark: #5426c4;
+    --purple-light: #8c63e8;
+    --blue-light: #eaf6ff;
+    --border: #cfe0f7;
+    --white: #ffffff;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    color: var(--text-dark);
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.register-page {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient( circle at 50% 42%, rgba(255,255,255,0.95) 0%, rgba(246,251,255,0.92) 42%, rgba(235,245,255,0.92) 100% );
+}
+
+
+/* =========================================================
+   BACKGROUND SHAPES
+   ========================================================= */
+
+.bg-shape {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* Top-left large curved shape */
+
+.bg-shape-left {
+    width: 410px;
+    height: 270px;
+    top: -145px;
+    left: -90px;
+    border-radius: 0 0 75% 0;
+    background: linear-gradient( 135deg, #bcecff 0%, #d9edff 48%, #e6ddff 100% );
+    transform: rotate(-4deg);
+}
+
+
+/* Bottom-right large curved shape */
+
+.bg-shape-right {
+    width: 480px;
+    height: 310px;
+    right: -150px;
+    bottom: -145px;
+    border-radius: 75% 0 0 0;
+    background: linear-gradient( 135deg, #d8d5ff 0%, #a9a7ff 42%, #47d7db 100% );
+    transform: rotate(-7deg);
+}
+
+
+/* Left middle soft circle */
+
+.bg-glow-left {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: -42px;
+    top: 400px;
+    border-radius: 50%;
+    background: radial-gradient( circle, rgba(207,224,255,0.65), rgba(207,224,255,0) );
+}
+
+
+/* Right middle glow */
+
+.bg-glow-right {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    right: -90px;
+    top: 360px;
+    border-radius: 50%;
+    background: radial-gradient( circle, rgba(211,228,255,0.75), rgba(211,228,255,0) );
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.register-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 620px;
+    margin-top: 38px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.register-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 42px;
+    text-decoration: none;
+}
+
+    .register-logo img {
+        width: 290px;
+        height: auto;
+        display: block;
+        object-fit: contain;
+    }
+
+.logo-mark {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 17px;
+    background: white;
+    box-shadow: 0 5px 18px rgba(69, 111, 170, 0.12);
+    overflow: hidden;
+}
+
+
+.logo-dot {
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    border-radius: 8px;
+}
+
+
+.dot-blue {
+    top: 7px;
+    left: 7px;
+    background: #12a8e7;
+}
+
+
+.dot-green {
+    top: 7px;
+    right: 7px;
+    background: #16c98a;
+}
+
+
+.dot-pink {
+    bottom: 7px;
+    left: 7px;
+    background: #ff3d8d;
+}
+
+
+.dot-yellow {
+    bottom: 7px;
+    right: 7px;
+    background: #ffbd24;
+}
+
+
+.logo-center {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 23px;
+    top: 23px;
+    border-radius: 7px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+    .logo-center span {
+        width: 12px;
+        height: 12px;
+        border-radius: 3px;
+        background: linear-gradient( 135deg, #7650d9, #a755db );
+    }
+
+
+.logo-text {
+    font-size: 40px;
+    font-weight: 750;
+    letter-spacing: -2px;
+}
+
+
+    .logo-text .task {
+        color: #17345f;
+    }
+
+
+    .logo-text .flow {
+        color: #6c37d5;
+    }
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.register-container h1 {
+    font-size: 48px;
+    line-height: 1.15;
+    letter-spacing: -1.7px;
+    font-weight: 750;
+    color: #1b3764;
+    margin-bottom: 14px;
+}
+
+
+.subtitle {
+    font-size: 19px;
+    line-height: 1.5;
+    color: #6681b7;
+    margin-bottom: 29px;
+}
+
+
+    .subtitle strong {
+        font-weight: 750;
+    }
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.register-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+/* =========================================================
+   EMAIL INPUT
+   ========================================================= */
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+
+    .input-wrapper input {
+        width: 100%;
+        height: 62px;
+        border: 1px solid #cfe0f7;
+        border-radius: 16px;
+        outline: none;
+        background: rgba(255,255,255,0.75);
+        box-shadow: 0 7px 20px rgba(87, 151, 220, 0.14);
+        padding: 0 22px 0 58px;
+        font-size: 18px;
+        color: #233f70;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+
+        .input-wrapper input::placeholder {
+            color: #91a9d2;
+        }
+
+
+        .input-wrapper input:focus {
+            border-color: #7f5bdd;
+            box-shadow: 0 0 0 4px rgba(111, 67, 213, 0.10), 0 8px 24px rgba(87, 151, 220, 0.15);
+        }
+
+
+.input-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    color: #6381b9;
+    pointer-events: none;
+}
+
+
+    .input-icon svg {
+        width: 100%;
+        height: 100%;
+    }
+
+
+/* =========================================================
+   CONTINUE BUTTON
+   ========================================================= */
+
+.continue-button {
+    position: relative;
+    width: 100%;
+    height: 62px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient( 100deg, #7551d5 0%, #6840ce 48%, #6631c7 100% );
+    color: white;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 9px 24px rgba(104, 60, 206, 0.27);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+
+    .continue-button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 12px 28px rgba(104, 60, 206, 0.34);
+    }
+
+
+    .continue-button:active {
+        transform: translateY(1px);
+    }
+
+
+    .continue-button .arrow {
+        position: absolute;
+        right: 23px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 29px;
+        font-weight: 300;
+    }
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.divider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 31px 0 27px;
+    color: #617db2;
+}
+
+
+    .divider span {
+        height: 1px;
+        flex: 1;
+        background: #d1def2;
+    }
+
+
+    .divider strong {
+        font-size: 16px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+
+/* =========================================================
+   SOCIAL BUTTONS
+   ========================================================= */
+
+.social-options {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+
+.social-button {
+    height: 62px;
+    border-radius: 16px;
+    border: 1px solid #cfddf3;
+    background: rgba(255,255,255,0.45);
+    color: #304d7c;
+    font-size: 17px;
+    font-weight: 650;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+
+    .social-button:hover {
+        background: rgba(255,255,255,0.85);
+        border-color: #b7cbea;
+        transform: translateY(-1px);
+    }
+
+
+/* Google */
+
+.google-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.google-g {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    background: conic-gradient( from -45deg, #4285f4 0deg 90deg, #34a853 90deg 180deg, #fbbc05 180deg 270deg, #ea4335 270deg 360deg );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+/* Apple */
+
+.apple-icon {
+    font-size: 29px;
+    line-height: 1;
+    color: #050505;
+}
+
+
+/* =========================================================
+   EXISTING ACCOUNT
+   ========================================================= */
+
+.existing-account {
+    margin-top: 45px;
+    line-height: 1.6;
+}
+
+
+    .existing-account p {
+        font-size: 16px;
+        color: #7188b5;
+        margin-bottom: 2px;
+    }
+
+
+    .existing-account a {
+        color: #6331d7;
+        font-size: 17px;
+        font-weight: 750;
+        text-decoration: none;
+    }
+
+
+        .existing-account a:hover {
+            text-decoration: underline;
+        }
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.register-footer {
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+    padding: 38px 20px 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    color: #7187b2;
+}
+
+
+    .register-footer a,
+    .region-button {
+        color: #7187b2;
+        font-size: 16px;
+        text-decoration: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+
+        .register-footer a:hover {
+            color: #5731ca;
+        }
+
+
+.region-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.globe-icon {
+    font-size: 21px;
+}
+
+
+.region-arrow {
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .register-container {
+        width: calc(100% - 40px);
+        margin-top: 28px;
+    }
+
+
+        .register-container h1 {
+            font-size: 36px;
+        }
+
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+
+    .logo-mark {
+        width: 58px;
+        height: 58px;
+    }
+
+
+    .logo-text {
+        font-size: 32px;
+    }
+
+
+    .social-options {
+        grid-template-columns: 1fr;
+    }
+
+
+    .register-footer {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+
+    .bg-shape-left {
+        width: 260px;
+        height: 190px;
+    }
+
+
+    .bg-shape-right {
+        width: 320px;
+        height: 220px;
+    }
+}
+
+
+@media (max-height: 800px) {
+
+    .register-container {
+        margin-top: 22px;
+    }
+
+    .register-logo {
+        margin-bottom: 20px;
+    }
+
+    .register-container h1 {
+        font-size: 42px;
+    }
+
+    .existing-account {
+        margin-top: 28px;
+    }
+
+    .register-footer {
+        padding-top: 22px;
+        padding-bottom: 18px;
+    }
+}
+
+/* =========================================================
+   FORM ERROR
+   ========================================================= */
+
+.register-error {
+    width: 100%;
+    padding: 11px 16px;
+    margin-bottom: 2px;
+    border-radius: 10px;
+    background: #fff0f1;
+    color: #c73643;
+    border: 1px solid #ffd0d4;
+    font-size: 14px;
+    text-align: left;
+}

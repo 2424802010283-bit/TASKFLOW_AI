@@ -1,0 +1,569 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    color: #17294d;
+    background: radial-gradient( circle at 50% 40%, #ffffff 0%, #f7fbff 42%, #edf5ff 100% );
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.bg-shape {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.bg-shape-left {
+    width: 350px;
+    height: 240px;
+    top: -90px;
+    left: -50px;
+    background: linear-gradient( 135deg, #c9dcff, #e8edff );
+    border-radius: 0 0 180px 0;
+    transform: rotate(-10deg);
+    opacity: .85;
+}
+
+.bg-shape-bottom-right {
+    width: 430px;
+    height: 270px;
+    right: -100px;
+    bottom: -110px;
+    background: linear-gradient( 135deg, #d7d7ff, #b4f8f0, #6de1e5 );
+    border-radius: 55% 0 0 0;
+    transform: rotate(-18deg);
+    opacity: .8;
+}
+
+.bg-circle {
+    position: fixed;
+    width: 160px;
+    height: 160px;
+    left: -80px;
+    top: 400px;
+    border-radius: 50%;
+    background: radial-gradient( circle, #dbe8ff, #edf4ff );
+    opacity: .8;
+}
+
+
+/* =========================
+   TOP REGISTER
+========================= */
+
+.top-register {
+    position: absolute;
+    top: 57px;
+    right: 72px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    font-size: 14px;
+}
+
+    .top-register span {
+        color: #6d7fa3;
+        font-weight: 500;
+    }
+
+    .top-register a {
+        color: #0878d1;
+        text-decoration: none;
+        font-weight: 600;
+        transition: .2s ease;
+    }
+
+        .top-register a:hover {
+            color: #005da8;
+            text-decoration: underline;
+        }
+.auth-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 42px;
+    text-decoration: none;
+    overflow: visible;
+}
+
+    .auth-logo img {
+        width: 390px;
+        height: auto;
+        max-height: 100px;
+        display: block;
+        object-fit: contain;
+    }
+
+/* =========================
+   MAIN
+========================= */
+
+.login-page {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 42px;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.taskflow-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 38px;
+}
+
+.logo-mark {
+    position: relative;
+    width: 72px;
+    height: 64px;
+}
+
+.logo-square {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+}
+
+.square-1 {
+    left: 0;
+    top: 0;
+    background: #18b7e8;
+}
+
+.square-2 {
+    right: 0;
+    top: 0;
+    background: #19c47a;
+}
+
+.square-3 {
+    left: 0;
+    bottom: 0;
+    background: #fa4d9d;
+}
+
+.square-4 {
+    right: 0;
+    bottom: 0;
+    background: #ffbd22;
+}
+
+.logo-center {
+    position: absolute;
+    left: 21px;
+    top: 18px;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5px;
+    gap: 2px;
+}
+
+    .logo-center span {
+        width: 8px;
+        height: 8px;
+        border-radius: 2px;
+    }
+
+        .logo-center span:nth-child(1) {
+            background: #16b8e8;
+        }
+
+        .logo-center span:nth-child(2) {
+            background: #20c67b;
+        }
+
+        .logo-center span:nth-child(3) {
+            background: #ff4c9b;
+        }
+
+        .logo-center span:nth-child(4) {
+            background: #ffc029;
+        }
+
+.logo-text {
+    font-size: 45px;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+    .logo-text .task {
+        color: #162a4b;
+    }
+
+    .logo-text .flow {
+        background: linear-gradient( 90deg, #22bce9, #24c97a, #7b40e9, #ed2f91 );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+
+/* =========================
+   HEADING
+========================= */
+
+h1 {
+    margin: 0;
+    font-size: 50px;
+    line-height: 1.1;
+    letter-spacing: -1.8px;
+    font-weight: 700;
+    color: #142747;
+    text-align: center;
+}
+
+.subtitle {
+    margin: 17px 0 37px;
+    font-size: 21px;
+    color: #60769f;
+    text-align: center;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.login-form {
+    width: 515px;
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.email-box {
+    width: 100%;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #bdd6ff;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, .65);
+    box-shadow: 0 8px 25px rgba(83, 143, 220, .12);
+    transition: .2s ease;
+}
+
+    .email-box:focus-within {
+        border-color: #8e7cff;
+        box-shadow: 0 0 0 3px rgba(121, 88, 255, .12);
+    }
+
+.email-icon {
+    width: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .email-icon svg {
+        width: 24px;
+        height: 24px;
+        fill: none;
+        stroke: #6887bd;
+        stroke-width: 1.8;
+    }
+
+.email-box input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 20px;
+    color: #243a60;
+}
+
+    .email-box input::placeholder {
+        color: #9aadd1;
+    }
+
+
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
+.continue-btn {
+    position: relative;
+    width: 100%;
+    height: 59px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient( 100deg, #8d68e8, #6740d1, #6d3bc9 );
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 12px 28px rgba(105, 67, 207, .27);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+    .continue-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 34px rgba(105, 67, 207, .35);
+    }
+
+    .continue-btn:active {
+        transform: translateY(0);
+    }
+
+.arrow {
+    position: absolute;
+    right: 23px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: 300;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+    width: 515px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 33px;
+}
+
+    .divider span {
+        height: 1px;
+        flex: 1;
+        background: #cbd9ee;
+    }
+
+    .divider p {
+        margin: 0;
+        color: #7187ae;
+        font-size: 16px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+
+/* =========================
+   SOCIAL
+========================= */
+
+.social-login {
+    width: 515px;
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.social-btn {
+    flex: 1;
+    height: 59px;
+    background: rgba(255,255,255,.45);
+    border: 1.5px solid #bdd4f6;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: #152947;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+    .social-btn:hover {
+        background: white;
+        transform: translateY(-1px);
+        box-shadow: 0 7px 18px rgba(72, 123, 190, .1);
+    }
+
+.google-icon {
+    font-size: 28px;
+    font-weight: 700;
+    font-family: Arial;
+    background: linear-gradient( 90deg, #4285f4 25%, #34a853 25%, #34a853 50%, #fbbc05 50%, #fbbc05 75%, #ea4335 75% );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.apple-icon {
+    color: #000;
+    font-size: 19px;
+}
+
+
+/* =========================
+   WORKSPACE
+========================= */
+
+.workspace-help {
+    margin-top: 43px;
+    font-size: 16px;
+    color: #506487;
+}
+
+    .workspace-help a {
+        color: #0074ce;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+        .workspace-help a:hover {
+            text-decoration: underline;
+        }
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.auth-footer {
+    position: fixed;
+    bottom: 78px;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+    .auth-footer a {
+        color: #607aa8;
+        text-decoration: none;
+        font-size: 16px;
+        transition: .2s ease;
+    }
+
+        .auth-footer a:hover {
+            color: #3e5e91;
+        }
+
+.region {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.globe {
+    font-size: 23px;
+}
+
+.down {
+    font-size: 18px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .top-register {
+        top: 25px;
+        right: 25px;
+    }
+
+    .login-page {
+        padding: 110px 25px 150px;
+    }
+
+    .taskflow-logo {
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .login-form,
+    .divider,
+    .social-login {
+        width: 100%;
+        max-width: 515px;
+    }
+
+    .auth-footer {
+        bottom: 25px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .top-register {
+        position: relative;
+        top: auto;
+        right: auto;
+        align-items: center;
+        padding-top: 20px;
+    }
+
+    .login-page {
+        padding-top: 35px;
+    }
+
+    .logo-text {
+        font-size: 35px;
+    }
+
+    .logo-mark {
+        transform: scale(.8);
+    }
+
+    h1 {
+        font-size: 31px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .social-login {
+        flex-direction: column;
+    }
+}

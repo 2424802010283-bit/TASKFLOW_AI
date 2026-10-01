@@ -1,0 +1,307 @@
+/* =========================================================
+   ANNOUNCEMENT
+========================================================= */
+
+.announcement {
+    background: var(--lavender-100);
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+    .announcement a {
+        font-weight: 600;
+        margin-left: 8px;
+        color: var(--indigo-700);
+    }
+
+
+/* =========================================================
+   TASKFLOW NAVBAR
+========================================================= */
+
+.navbar {
+    height: 76px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 120px;
+    box-sizing: border-box;
+    /* Căn giữa khi thu nhỏ + kéo hero chui lên sau navbar */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -76px; /* = height của navbar */
+    /* Ban đầu: trong suốt hoàn toàn */
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 0;
+    box-shadow: none;
+    transition: width 0.3s cubic-bezier(.22, 1, .36, 1), padding 0.3s cubic-bezier(.22, 1, .36, 1), top 0.3s cubic-bezier(.22, 1, .36, 1), border-radius 0.3s cubic-bezier(.22, 1, .36, 1), background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.3s ease;
+}
+
+    /* Cuộn xuống: viên thuốc nền trắng đặc */
+    .navbar.is-scrolled {
+        top: 12px;
+        width: calc(100% - 140px);
+        padding: 0 44px;
+        border-radius: 999px;
+        background: #ffffff;
+        border: 1px solid rgba(225, 221, 240, 0.95);
+        box-shadow: 0 12px 35px rgba(23, 20, 58, 0.12), 0 4px 12px rgba(23, 20, 58, 0.06);
+    }
+
+    /* Pha 2: rơi xuống nhẹ nhàng về vị trí cũ */
+    .navbar.is-dropping {
+        transition: none;
+        animation: navDrop 0.55s cubic-bezier(.22, 1, .36, 1);
+    }
+
+@keyframes navDrop {
+    from {
+        transform: translateY(-130%);
+    }
+
+    to {
+        transform: translateY(var(--rest-y));
+    }
+}
+    .navbar.is-dropping {
+        animation: navDrop 0.5s cubic-bezier(.22, 1, .36, 1);
+    }
+
+@keyframes navDrop {
+    from {
+        transform: translateY(-120%);
+    }
+
+    to {
+        transform: translateY(10px);
+    }
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.nav-brand {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.nav-logo {
+    width: 190px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    /*
+     * Logo → Features
+     */
+    margin-left: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #111111;
+    flex-shrink: 0;
+}
+
+    .nav-links a {
+        color: #111111;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    /*
+     * Pricing → Sign in
+     */
+    margin-left: 190px;
+    /*
+     * Sign in → Demo → Get Started
+     */
+    gap: 24px;
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   SIGN IN
+========================================================= */
+
+.nav-signin {
+    color: #111111;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.navbar .btn {
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   TẤT CẢ CHỮ NAVBAR
+========================================================= */
+
+.navbar,
+.navbar a,
+.navbar .nav-links,
+.navbar .nav-actions,
+.navbar .nav-signin,
+.navbar .btn {
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1400px) {
+
+    .navbar {
+        padding: 0 70px;
+    }
+
+        .navbar.is-scrolled {
+            width: calc(100% - 80px);
+            padding: 0 35px;
+        }
+
+    .nav-actions {
+        margin-left: 100px;
+    }
+}
+
+
+@media (max-width: 1200px) {
+
+    .navbar {
+        padding: 0 50px;
+    }
+
+        .navbar.is-scrolled {
+            width: calc(100% - 60px);
+            padding: 0 30px;
+        }
+
+    .nav-logo {
+        width: 170px;
+    }
+
+    .nav-links {
+        gap: 18px;
+        margin-left: 6px;
+    }
+
+    .nav-actions {
+        margin-left: 60px;
+        gap: 16px;
+    }
+}
+
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        padding: 0 30px;
+    }
+
+        .navbar.is-scrolled {
+            width: calc(100% - 40px);
+            padding: 0 25px;
+        }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-actions {
+        margin-left: 35px;
+        gap: 12px;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 25px;
+    }
+
+        .navbar.is-scrolled {
+            width: calc(100% - 30px);
+            padding: 0 22px;
+        }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-actions {
+        margin-left: auto;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 68px;
+        padding: 0 18px;
+    }
+
+        .navbar.is-scrolled {
+            width: calc(100% - 20px);
+            height: 68px;
+            padding: 0 18px;
+            margin: 0 auto;
+        }
+
+    .nav-logo {
+        width: 130px;
+    }
+
+    .nav-actions {
+        gap: 8px;
+        margin-left: auto;
+    }
+
+        .nav-actions .btn-outline {
+            display: none;
+        }
+}

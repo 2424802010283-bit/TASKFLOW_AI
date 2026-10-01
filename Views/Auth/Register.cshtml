@@ -1,0 +1,174 @@
+﻿@{
+    ViewData["Title"] = "Create your TaskFlow account";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"]</title>
+
+    <link rel="stylesheet"
+          href="~/css/auth/register.css"
+          asp-append-version="true" />
+</head>
+
+<body>
+
+    <main class="register-page">
+
+        <!-- Decorative background -->
+        <div class="bg-shape bg-shape-left"></div>
+        <div class="bg-shape bg-shape-right"></div>
+        <div class="bg-glow bg-glow-left"></div>
+        <div class="bg-glow bg-glow-right"></div>
+
+        <section class="register-container">
+
+            <!-- TaskFlow Logo -->
+            <a href="/" class="register-logo">
+                <img src="~/images/logoongan_final.png"
+                     alt="TaskFlow" />
+            </a>
+
+
+            <!-- Heading -->
+            <h1>First, enter your email</h1>
+
+            <p class="subtitle">
+                We suggest using the <strong>email address</strong> you use at work.
+            </p>
+
+
+            <!-- Register Form -->
+            <form id="registerForm"
+                  class="register-form"
+                  method="post"
+                  action="/Auth/Register">
+
+                <!-- Email -->
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8">
+                            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                            <path d="M3 7l9 6 9-6"></path>
+                        </svg>
+                    </span>
+
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           placeholder="name@work-email.com"
+                           autocomplete="email"
+                           required />
+
+                </div>
+
+
+                <!-- Continue -->
+                <button type="submit"
+                        class="continue-button"
+                        id="continueButton">
+
+                    <span>Continue</span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </form>
+
+
+            <!-- Divider -->
+            <div class="divider">
+                <span></span>
+                <strong>OTHER OPTIONS</strong>
+                <span></span>
+            </div>
+
+
+            <!-- Social Login -->
+            <div class="social-options">
+
+                <button type="button"
+                        class="social-button google-button"
+                        id="googleButton">
+
+                    <span class="google-icon">
+                        <span class="google-g">G</span>
+                    </span>
+
+                    <span>Google</span>
+
+                </button>
+
+
+                <button type="button"
+                        class="social-button apple-button"
+                        id="appleButton">
+
+                    <span class="apple-icon">
+                        
+                    </span>
+
+                    <span>Apple</span>
+
+                </button>
+
+            </div>
+
+
+            <!-- Existing account -->
+            <div class="existing-account">
+
+                <p>Already using TaskFlow?</p>
+
+                <a asp-controller="Auth"
+                       asp-action="Login">
+                    Sign in to an existing workspace
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- Footer links -->
+        <footer class="register-footer">
+
+            <a href="#">Privacy &amp; Terms</a>
+
+            <a href="#">Contact Us</a>
+
+            <button type="button"
+                    class="region-button"
+                    id="regionButton">
+
+                <span class="globe-icon">◎</span>
+
+                <span>Change region</span>
+
+                <span class="region-arrow">⌄</span>
+
+            </button>
+
+        </footer>
+
+    </main>
+
+
+    <script src="~/js/auth/register.js"
+            asp-append-version="true"></script>
+
+</body>
+</html>

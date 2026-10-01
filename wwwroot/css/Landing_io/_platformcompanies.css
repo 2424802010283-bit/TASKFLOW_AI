@@ -1,0 +1,483 @@
+/* ============ Section ============ */
+.platform-companies {
+    position: relative;
+    background: #fff;
+    padding: 24px 0 0;
+    overflow: hidden;
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    color: #1d1c1d;
+}
+
+.platform-companies__inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 20px 96px;
+    text-align: center;
+}
+
+/* ============ Tab switcher ============ */
+.platform-switcher {
+    display: inline-flex;
+    gap: 4px;
+    padding: 6px;
+    border: 1px solid #e3cdf5;
+    border-radius: 999px;
+    background: #f7ecff;
+    box-shadow: 0 2px 8px rgba(74, 21, 75, .12);
+}
+
+.platform-switcher__item {
+    border: 0;
+    background: transparent;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    color: #4a154b;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+    .platform-switcher__item:hover {
+        background: rgba(74, 21, 75, .08);
+    }
+
+    .platform-switcher__item.is-active {
+        background: #e9d0fa;
+        color: #5b0f7a;
+    }
+
+.platform-companies__title {
+    margin: 32px 0 40px;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -.01em;
+    color: #000;
+}
+
+/* ============ Card stage (the important part) ============ */
+.company-stage {
+    display: flex;
+    gap: 22px;
+    height: 274px;
+}
+
+/*
+ * Every card is a flex item. Default: the featured card is wide (flex 3.2),
+ * the side cards are narrow (flex 1).
+ * The card being hovered grows, everything else shrinks.
+ */
+.company-card {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #222;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+    transition: flex-grow .55s cubic-bezier(.22, .8, .24, 1), box-shadow .35s ease;
+}
+
+.company-card--featured {
+    flex-grow: 3.2;
+}
+
+/* When the mouse is inside the stage: reset all, then grow only the hovered one */
+.company-stage.has-hover .company-card {
+    flex-grow: 1;
+}
+
+    .company-stage.has-hover .company-card.is-hovered {
+        flex-grow: 3.2;
+        box-shadow: 0 14px 30px rgba(0, 0, 0, .35);
+    }
+
+.company-card:focus-visible {
+    outline: 3px solid #a855d8;
+    outline-offset: 3px;
+}
+
+/* ============ Card visual (fixed width so content doesn't reflow while resizing) ============ */
+.company-card__visual {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+    /* Darken overlay, disappears a bit on the active card */
+    .company-card__visual::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, .28);
+        transition: background .4s;
+        pointer-events: none;
+    }
+
+.company-stage.has-hover .company-card.is-hovered .company-card__visual::after,
+.company-stage:not(.has-hover) .company-card--featured .company-card__visual::after {
+    background: rgba(0, 0, 0, .05);
+}
+
+.company-card__visual > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Side card caption: hidden text, only show when it is expanded */
+.company-card__copy {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 14px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .3s .15s, transform .3s .15s;
+    pointer-events: none;
+}
+
+    .company-card__copy strong {
+        font-size: 16px;
+    }
+
+    .company-card__copy span {
+        font-size: 13px;
+        opacity: .9;
+        white-space: nowrap;
+    }
+
+.company-stage.has-hover .company-card.is-hovered:not(.company-card--featured) .company-card__copy {
+    opacity: 1;
+    transform: none;
+}
+
+/* ============ Individual visuals ============ */
+.company-brand {
+    font-size: 26px;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: .01em;
+}
+
+.company-card__visual--flowai {
+    background: linear-gradient(160deg, #2b3a4a, #0f1720);
+}
+
+.flow-orb {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    right: -30px;
+    top: -20px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #7dd3fc, transparent 70%);
+    opacity: .5;
+}
+
+.flow-lines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 28px);
+}
+
+.company-card__visual--workspace {
+    background: linear-gradient(135deg, #2c3e50, #14202b);
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.workspace-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px;
+    font-size: 13px;
+}
+
+    .workspace-bar span {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #ffffff66;
+    }
+
+    .workspace-bar b {
+        margin-left: 8px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+.workspace-grid {
+    position: absolute;
+    inset: 44px 24px 90px;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1.4fr;
+    gap: 12px;
+}
+
+.workspace-person {
+    border-radius: 10px;
+    background: linear-gradient(180deg, #8a97a5, #4b5967);
+}
+
+.workspace-screen {
+    border-radius: 8px;
+    background: linear-gradient(180deg, #f3f6f9, #b9c4d0);
+    opacity: .9;
+}
+
+.workspace-caption {
+    position: absolute;
+    left: 24px;
+    bottom: 22px;
+    max-width: 62%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+    .workspace-caption small {
+        font-weight: 700;
+        letter-spacing: .08em;
+        opacity: .85;
+    }
+
+    .workspace-caption strong {
+        font-size: 20px;
+        line-height: 1.25;
+    }
+
+.company-play {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 46px;
+    height: 46px;
+    border: 0;
+    border-radius: 50%;
+    background: #fff;
+    color: #5b0f7a;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+    .company-play:hover {
+        transform: scale(1.1);
+    }
+
+.company-card__visual--mobile {
+    background: linear-gradient(160deg, #a58a6b, #5b4632);
+}
+
+.phone {
+    width: 84px;
+    height: 160px;
+    border-radius: 14px;
+    background: #111;
+    padding: 6px;
+    transform: rotate(14deg);
+}
+
+.phone-screen {
+    height: 100%;
+    border-radius: 9px;
+    background: #fff;
+    color: #1d1c1d;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 9px;
+}
+
+    .phone-screen strong {
+        font-size: 12px;
+    }
+
+.company-card__visual--car {
+    background: linear-gradient(180deg, #2d2f33, #8b8d91);
+    align-items: flex-end;
+}
+
+.car-body {
+    width: 80%;
+    height: 46%;
+    margin-bottom: 26px;
+    border-radius: 14px 14px 6px 6px;
+    background: #c4472d;
+}
+
+.car-light {
+    position: absolute;
+    left: 12%;
+    bottom: 60px;
+    width: 26px;
+    height: 14px;
+    border-radius: 4px;
+    background: #fff;
+    z-index: 2;
+}
+
+/* ============ Buttons ============ */
+.platform-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 76px;
+}
+
+.platform-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border: 1px solid #5b0f7a;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    text-decoration: none;
+    transition: background .2s, color .2s;
+}
+
+.platform-btn--primary {
+    background: #7551D5;
+    color: #fff;
+}
+
+    .platform-btn--primary:hover {
+        background: #6631C7;
+    }
+
+.platform-btn--secondary {
+    background: #fff;
+    color: #5b0f7a;
+}
+
+    .platform-btn--secondary:hover {
+        background: #f7ecff;
+    }
+
+/* ============ Curved purple divider ============ */
+.platform-companies__wave {
+    height: 44px;
+    background: #3B2E93;
+}
+
+    .platform-companies__wave::before {
+        content: "";
+        display: block;
+        height: 100%;
+        background: #fff;
+        border-bottom-left-radius: 50% 100%;
+        border-bottom-right-radius: 50% 100%;
+    }
+
+/* ============ Stats section (purple) ============ */
+.platform-followup {
+    background: #3B2E93;
+    color: #fff;
+    text-align: center;
+    padding: 96px 20px 120px;
+}
+.platform-followup__inner {
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.platform-followup h2 {
+    margin: 0 0 72px;
+    font-size: 44px;
+    font-weight: 800;
+    letter-spacing: -.015em;
+    line-height: 1.15;
+}
+
+.platform-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.platform-stat__number {
+    display: block;
+    font-size: clamp(64px, 8vw, 96px);
+    font-weight: 800;
+    line-height: 1;
+    color: #cc7bff;
+    /* equal-width digits so the number doesn't jitter while counting */
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -.02em;
+}
+
+.platform-stat__text {
+    max-width: 240px;
+    margin: 28px auto 0;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+    .platform-stat__text sup {
+        font-size: .6em;
+        line-height: 0;
+    }
+
+/* ============ Responsive ============ */
+@media (max-width: 760px) {
+    .company-stage {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .company-card {
+        flex: none !important;
+        height: 120px;
+        transition: height .45s ease;
+    }
+
+    .company-card--featured {
+        height: 240px;
+    }
+
+    .company-stage.has-hover .company-card {
+        height: 120px;
+    }
+
+        .company-stage.has-hover .company-card.is-hovered {
+            height: 240px;
+        }
+
+    .platform-followup h2 {
+        font-size: 30px;
+        margin-bottom: 48px;
+    }
+
+    .platform-stats {
+        grid-template-columns: 1fr;
+        gap: 56px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .company-card, .company-card__copy {
+        transition: none;
+    }
+}

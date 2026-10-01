@@ -1,0 +1,989 @@
+/* =========================================================
+   TASKFLOW AI AGENTS
+   Light blue / purple gradient + curved bottom
+========================================================= */
+
+@import url('_ai-agents.css');
+.ai-showcase {
+    position: relative;
+    min-height: 920px;
+    overflow: hidden;
+    color: #ffffff;
+    /*
+       MÀU CHÍNH GIỐNG HÌNH 3:
+       xanh nhạt -> xanh tím -> tím
+    */
+    background: radial-gradient( circle at 12% 20%, rgba(173, 207, 255, 0.95) 0%, rgba(173, 207, 255, 0) 28% ), radial-gradient( circle at 90% 15%, rgba(210, 180, 255, 0.8) 0%, rgba(210, 180, 255, 0) 28% ), linear-gradient( 115deg, #79a9f5 0%, #6678e8 35%, #7159d9 68%, #8a5ee8 100% );
+    padding: 110px 60px 220px;
+}
+
+
+/* =========================================================
+   DECORATIVE GLOW
+========================================================= */
+
+.ai-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    pointer-events: none;
+}
+
+.ai-glow-1 {
+    width: 420px;
+    height: 420px;
+    left: -180px;
+    top: 120px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.ai-glow-2 {
+    width: 360px;
+    height: 360px;
+    right: -120px;
+    bottom: 180px;
+    background: rgba(190, 220, 255, 0.35);
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.ai-stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 10px rgba(255,255,255,.9), 0 0 25px rgba(255,255,255,.6);
+    animation: starFloat 4s ease-in-out infinite;
+}
+
+.star-1 {
+    top: 18%;
+    left: 7%;
+    font-size: 24px;
+}
+
+.star-2 {
+    top: 27%;
+    left: 48%;
+    font-size: 12px;
+}
+
+.star-3 {
+    top: 14%;
+    right: 17%;
+    font-size: 22px;
+}
+
+.star-4 {
+    top: 47%;
+    right: 8%;
+    font-size: 30px;
+}
+
+.star-5 {
+    top: 35%;
+    left: 51%;
+    font-size: 22px;
+}
+
+.star-6 {
+    bottom: 28%;
+    right: 25%;
+    font-size: 16px;
+}
+
+@keyframes starFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+        opacity: .7;
+    }
+
+    50% {
+        transform: translateY(-8px);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.ai-container {
+    width: min(1380px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(380px, 0.85fr) minmax(600px, 1.15fr);
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.ai-content {
+    padding-left: 30px;
+    max-width: 570px;
+}
+
+.ai-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .13em;
+    color: rgba(255,255,255,.85);
+    margin-bottom: 24px;
+}
+
+.ai-label-line {
+    width: 34px;
+    height: 2px;
+    background: rgba(255,255,255,.8);
+}
+
+
+.ai-title {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 4vw, 62px);
+    line-height: 1.06;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 28px;
+}
+
+
+.ai-description {
+    max-width: 540px;
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.88);
+    margin-bottom: 38px;
+}
+
+
+/* =========================================================
+   FEATURE LIST
+========================================================= */
+
+.ai-feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.ai-feature {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background .25s ease, transform .25s ease;
+}
+
+    .ai-feature:hover {
+        background: rgba(255,255,255,.10);
+        transform: translateX(4px);
+    }
+
+
+    .ai-feature.active {
+        background: rgba(255,255,255,.16);
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,.10);
+    }
+
+
+.ai-feature-icon {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: rgba(255,255,255,.15);
+    color: #ffffff;
+    font-size: 17px;
+}
+
+
+.ai-feature-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+    .ai-feature-text strong {
+        font-size: 14px;
+        font-weight: 700;
+        color: #ffffff;
+    }
+
+    .ai-feature-text span {
+        font-size: 12px;
+        color: rgba(255,255,255,.68);
+    }
+
+
+.ai-new {
+    margin-left: auto;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.85);
+    color: #5141bd;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   RIGHT VISUAL
+========================================================= */
+
+.ai-visual {
+    position: relative;
+    padding: 40px 20px 0;
+}
+
+
+/* =========================================================
+   MAIN APPLICATION WINDOW
+========================================================= */
+
+.ai-app-window {
+    position: relative;
+    width: 100%;
+    min-height: 570px;
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.7);
+    box-shadow: 0 35px 90px rgba(37, 26, 113, .32), 0 10px 30px rgba(37, 26, 113, .18);
+    z-index: 4;
+}
+
+
+/* =========================================================
+   WINDOW HEADER
+========================================================= */
+
+.ai-window-header {
+    height: 48px;
+    background: linear-gradient( 90deg, #362077, #5135a1, #684bc2 );
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    gap: 20px;
+}
+
+
+.window-dots {
+    display: flex;
+    gap: 6px;
+}
+
+    .window-dots span {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255,255,255,.75);
+    }
+
+
+        .window-dots span:nth-child(1) {
+            background: #ff6259;
+        }
+
+        .window-dots span:nth-child(2) {
+            background: #ffc043;
+        }
+
+        .window-dots span:nth-child(3) {
+            background: #38c875;
+        }
+
+
+.ai-search {
+    width: 300px;
+    height: 28px;
+    margin: auto;
+    border-radius: 7px;
+    background: rgba(255,255,255,.14);
+    color: rgba(255,255,255,.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 11px;
+}
+
+
+.window-actions {
+    display: flex;
+    gap: 13px;
+    color: rgba(255,255,255,.85);
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   APP BODY
+========================================================= */
+
+.ai-app-body {
+    display: flex;
+    min-height: 522px;
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.ai-sidebar {
+    width: 185px;
+    flex-shrink: 0;
+    background: linear-gradient( 180deg, #32206f, #442b91 );
+    color: #ffffff;
+    padding: 22px 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.ai-sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 8px 25px;
+    font-size: 17px;
+}
+
+
+.mini-logo {
+    width: 31px;
+    height: 31px;
+    border-radius: 9px;
+    padding: 5px;
+    background: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+}
+
+
+    .mini-logo span {
+        border-radius: 3px;
+    }
+
+        .mini-logo span:nth-child(1) {
+            background: #2ab6e8;
+        }
+
+        .mini-logo span:nth-child(2) {
+            background: #6d5ae0;
+        }
+
+        .mini-logo span:nth-child(3) {
+            background: #f0a23a;
+        }
+
+        .mini-logo span:nth-child(4) {
+            background: #ed4f76;
+        }
+
+
+/* Menu */
+
+.ai-sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.ai-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 11px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: rgba(255,255,255,.72);
+    transition: .2s;
+}
+
+
+    .ai-menu-item span {
+        width: 17px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+
+    .ai-menu-item.active {
+        background: rgba(255,255,255,.17);
+        color: #ffffff;
+    }
+
+
+    .ai-menu-item:hover {
+        background: rgba(255,255,255,.1);
+        color: #ffffff;
+    }
+
+
+.ai-sidebar-user {
+    margin-top: auto;
+    padding: 15px 8px 0;
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+
+.user-avatar,
+.message-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient( 135deg, #2ab6e8, #6d5ae0 );
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CHAT AREA
+========================================================= */
+
+.ai-chat-area {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+}
+
+
+.ai-chat-header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    border-bottom: 1px solid #eeeef5;
+}
+
+
+.ai-chat-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.flowbot-avatar,
+.flowbot-large,
+.flowbot-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient( 135deg, #5f45ce, #8d61e8 );
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(91,67,207,.25);
+}
+
+
+.flowbot-avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+}
+
+
+.ai-chat-title strong {
+    display: block;
+    font-size: 14px;
+    color: #19163b;
+}
+
+
+.ai-chat-title span {
+    display: block;
+    font-size: 10px;
+    color: #8986a2;
+}
+
+
+.chat-more {
+    color: #9996ad;
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   CHAT CONTENT
+========================================================= */
+
+.ai-chat-content {
+    flex: 1;
+    padding: 26px 30px;
+    overflow: hidden;
+}
+
+
+.ai-welcome {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.flowbot-large {
+    width: 46px;
+    height: 46px;
+    margin: 0 auto 10px;
+    border-radius: 13px;
+    font-size: 21px;
+}
+
+
+.ai-welcome h3 {
+    font-size: 17px;
+    color: #211c47;
+    margin-bottom: 5px;
+}
+
+
+.ai-welcome p {
+    font-size: 11px;
+    color: #85819d;
+}
+
+
+/* Suggestions */
+
+.ai-suggestion-list {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+
+    .ai-suggestion-list button {
+        border: 1px solid #e6e3f3;
+        background: #faf9fe;
+        color: #51459c;
+        border-radius: 999px;
+        padding: 7px 12px;
+        font-size: 10px;
+        cursor: pointer;
+    }
+
+
+/* Message */
+
+.ai-message {
+    display: flex;
+    gap: 11px;
+    margin-bottom: 20px;
+}
+
+
+.message-content {
+    background: #f7f6fc;
+    border-radius: 0 10px 10px 10px;
+    padding: 10px 13px;
+    max-width: 80%;
+}
+
+
+    .message-content strong,
+    .ai-response strong {
+        display: block;
+        font-size: 11px;
+        color: #272242;
+        margin-bottom: 4px;
+    }
+
+
+    .message-content p,
+    .ai-response p {
+        font-size: 11px;
+        line-height: 1.5;
+        color: #66627c;
+    }
+
+
+/* AI response */
+
+.ai-response {
+    display: flex;
+    gap: 11px;
+    padding: 13px;
+    background: linear-gradient( 135deg, #f8f5ff, #f1efff );
+    border: 1px solid #e3def7;
+    border-radius: 12px;
+}
+
+
+.flowbot-small {
+    width: 28px;
+    height: 28px;
+    flex: 0 0 28px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+
+.response-tags {
+    display: flex;
+    gap: 5px;
+    margin-top: 8px;
+}
+
+
+    .response-tags span {
+        padding: 4px 7px;
+        border-radius: 5px;
+        background: #ffffff;
+        border: 1px solid #e4e0f3;
+        color: #6255aa;
+        font-size: 9px;
+    }
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.ai-input {
+    margin: 0 25px 20px;
+    height: 48px;
+    border: 1px solid #dedbea;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 13px;
+    color: #aaa6bd;
+    font-size: 11px;
+}
+
+
+.input-actions {
+    display: flex;
+    gap: 13px;
+    font-size: 17px;
+    color: #6b5cc8;
+}
+
+
+/* =========================================================
+   FLOATING CARDS
+========================================================= */
+
+.ai-floating-card {
+    position: absolute;
+    width: 175px;
+    padding: 15px;
+    border-radius: 13px;
+    background: rgba(255,255,255,.94);
+    color: #272044;
+    box-shadow: 0 18px 40px rgba(40,27,111,.18);
+    z-index: 7;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    animation: floatingCard 5s ease-in-out infinite;
+}
+
+
+.ai-card-left {
+    left: -35px;
+    top: 150px;
+    transform: rotate(-5deg);
+}
+
+
+.ai-card-right {
+    right: -35px;
+    top: 260px;
+    transform: rotate(5deg);
+    animation-delay: -2s;
+}
+
+
+.floating-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: #e7f5ff;
+    color: #4386e8;
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+
+    .floating-icon.purple {
+        background: #eee8ff;
+        color: #7054d4;
+    }
+
+
+.ai-floating-card strong {
+    font-size: 12px;
+}
+
+
+.ai-floating-card > span {
+    color: #8c87a1;
+    font-size: 9px;
+}
+
+
+.floating-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 5px;
+}
+
+
+    .floating-lines i {
+        height: 4px;
+        border-radius: 999px;
+        background: #ebe8f5;
+    }
+
+
+        .floating-lines i:nth-child(1) {
+            width: 90%;
+        }
+
+        .floating-lines i:nth-child(2) {
+            width: 65%;
+        }
+
+        .floating-lines i:nth-child(3) {
+            width: 78%;
+        }
+
+
+@keyframes floatingCard {
+
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -8px;
+    }
+}
+
+
+/* =========================================================
+   PLAY ANIMATION
+========================================================= */
+
+.ai-play-button {
+    position: relative;
+    z-index: 8;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0 0 25px;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.play-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #5848c5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(30,20,90,.15);
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   BIG CURVE
+========================================================= */
+
+/*
+    Đây là phần quan trọng nhất.
+
+    Hình 2:
+    nền tím kéo xuống
+    rồi nền trắng "ăn" vào giữa section
+    tạo thành đường cong lớn.
+
+    Nhưng nền bên trên vẫn dùng
+    gradient xanh/tím của hình 3.
+*/
+
+.ai-curved-bottom {
+    position: absolute;
+    z-index: 10;
+    left: -5%;
+    bottom: -1px;
+    width: 110%;
+    height: 150px;
+    background: var(--bg);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .ai-container {
+        grid-template-columns: 1fr;
+        max-width: 850px;
+        gap: 60px;
+    }
+
+    .ai-content {
+        max-width: 700px;
+        padding-left: 0;
+    }
+
+    .ai-title {
+        font-size: 52px;
+    }
+
+    .ai-visual {
+        padding: 20px 35px 0;
+    }
+
+    .ai-card-left {
+        left: 0;
+    }
+
+    .ai-card-right {
+        right: 0;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .ai-showcase {
+        padding: 80px 20px 180px;
+    }
+
+    .ai-title {
+        font-size: 40px;
+    }
+
+    .ai-description {
+        font-size: 15px;
+    }
+
+    .ai-feature-text span {
+        display: none;
+    }
+
+    .ai-feature {
+        padding: 9px;
+    }
+
+    .ai-visual {
+        padding: 10px 0;
+    }
+
+    .ai-app-window {
+        min-height: 500px;
+    }
+
+    .ai-sidebar {
+        width: 65px;
+    }
+
+    .ai-sidebar-brand strong,
+    .ai-menu-item:not(.active) {
+        font-size: 0;
+    }
+
+    .ai-menu-item {
+        justify-content: center;
+    }
+
+        .ai-menu-item span {
+            font-size: 15px;
+        }
+
+    .ai-sidebar-brand {
+        justify-content: center;
+    }
+
+    .ai-floating-card {
+        display: none;
+    }
+
+    .ai-search {
+        width: 180px;
+    }
+
+    .ai-curved-bottom {
+        height: 90px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------------------*/

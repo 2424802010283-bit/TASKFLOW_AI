@@ -1,0 +1,561 @@
+/* =========================================================
+   CHANNEL CREATE FLOW
+========================================================= */
+
+.channel-modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,.48);
+    z-index: 99999;
+}
+
+    .channel-modal-overlay.hidden {
+        display: none;
+    }
+
+
+.channel-modal {
+    width: 650px;
+    max-width: calc(100vw - 40px);
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 30px 90px rgba(0,0,0,.30);
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   STEP
+========================================================= */
+
+.channel-step {
+    display: none;
+    position: relative;
+    padding: 28px 34px 22px;
+    min-height: 360px;
+}
+
+    .channel-step.active {
+        display: block;
+    }
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.channel-modal-header {
+    margin-bottom: 26px;
+}
+
+    .channel-modal-header h2 {
+        margin: 0;
+        font-size: 26px;
+        font-weight: 750;
+        color: #1d1c1d;
+    }
+
+    .channel-modal-header p {
+        margin: 8px 0 0;
+        color: #6f6870;
+        font-size: 13px;
+    }
+
+.channel-preview-name {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 650;
+    color: #4d4650;
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.channel-modal-close {
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: #4d474e;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+    .channel-modal-close:hover {
+        background: #f3f0f4;
+    }
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.channel-label,
+.channel-subtitle {
+    display: block;
+    margin-bottom: 8px;
+    color: #2b272c;
+    font-size: 14px;
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   CHANNEL NAME
+========================================================= */
+
+.channel-name-input {
+    height: 56px;
+    border: 2px solid #b7d2f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    background: #fff;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+    .channel-name-input:focus-within {
+        border-color: #2f67bd;
+        box-shadow: 0 0 0 4px rgba(49,85,217,.13);
+    }
+
+    .channel-name-input > span:first-child {
+        font-size: 22px;
+        color: #5c5660;
+    }
+
+    .channel-name-input input {
+        min-width: 0;
+        flex: 1;
+        height: 100%;
+        border: 0;
+        outline: 0;
+        padding: 0 10px;
+        font-size: 18px;
+        color: #1d1c1d;
+    }
+
+        .channel-name-input input::placeholder {
+            color: #969097;
+        }
+
+    .channel-name-input #channelNameCounter {
+        font-size: 13px;
+        color: #6f6870;
+    }
+
+
+/* =========================================================
+   HELP
+========================================================= */
+
+.channel-help {
+    margin: 7px 0 0;
+    color: #6d666d;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   VISIBILITY
+========================================================= */
+
+.visibility-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    padding: 13px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+    .visibility-option:hover {
+        background: #f6f3f7;
+    }
+
+    .visibility-option input {
+        position: absolute;
+        opacity: 0;
+    }
+
+.radio-circle {
+    width: 20px;
+    height: 20px;
+    border: 1.7px solid #807980;
+    border-radius: 50%;
+    margin-top: 2px;
+    flex: 0 0 20px;
+    position: relative;
+}
+
+.visibility-option input:checked + .radio-circle {
+    border-color: #2d69c4;
+}
+
+    .visibility-option input:checked + .radio-circle::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        left: 3px;
+        top: 3px;
+        border-radius: 50%;
+        background: #2d69c4;
+    }
+
+.visibility-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+    .visibility-copy strong {
+        font-size: 14px;
+    }
+
+    .visibility-copy small {
+        color: #777078;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+
+/* =========================================================
+   PEOPLE SEARCH
+========================================================= */
+
+.channel-people-search {
+    height: 48px;
+    border: 1px solid #cfc8d1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 8px;
+    transition: .2s;
+}
+
+    .channel-people-search:focus-within {
+        border-color: #2f67bd;
+        box-shadow: 0 0 0 4px rgba(49,85,217,.12);
+    }
+
+    .channel-people-search i {
+        color: #656069;
+    }
+
+    .channel-people-search input {
+        flex: 1;
+        min-width: 0;
+        border: 0;
+        outline: 0;
+        font-size: 13px;
+    }
+
+
+/* =========================================================
+   SEARCH RESULTS
+========================================================= */
+
+.channel-people-results {
+    max-height: 160px;
+    overflow-y: auto;
+    margin-top: 7px;
+    border-radius: 8px;
+}
+
+.channel-person {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 9px;
+    background: #fff;
+    border: 0;
+    border-bottom: 1px solid #ece8ed;
+    text-align: left;
+    cursor: pointer;
+}
+
+    .channel-person:hover {
+        background: #f6f3f7;
+    }
+
+.channel-person-avatar {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 34px;
+    border-radius: 50%;
+    background: linear-gradient( 145deg, #6e9fe2, #40568b );
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.channel-person-copy {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+    .channel-person-copy strong {
+        font-size: 11px;
+    }
+
+    .channel-person-copy span {
+        font-size: 9px;
+        color: #8a838b;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+.channel-person-add {
+    color: #3155d9;
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   SELECTED PEOPLE
+========================================================= */
+
+.channel-selected-people {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 9px;
+}
+
+.channel-person-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 8px 5px 6px;
+    border-radius: 999px;
+    background: #eef3ff;
+    color: #21457f;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+    .channel-person-chip button {
+        width: 18px;
+        height: 18px;
+        border: 0;
+        border-radius: 50%;
+        background: rgba(18,54,117,.10);
+        cursor: pointer;
+        color: #21457f;
+    }
+
+
+/* =========================================================
+   ADMIN BOX
+========================================================= */
+
+.channel-admin-box {
+    margin-top: 17px;
+    padding: 13px;
+    border: 1px solid #9fc6f3;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+    .channel-admin-box > div {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .channel-admin-box strong {
+        font-size: 12px;
+    }
+
+    .channel-admin-box span {
+        color: #817a82;
+        font-size: 10px;
+    }
+
+
+/* =========================================================
+   SWITCH
+========================================================= */
+
+.channel-switch {
+    position: relative;
+    width: 46px;
+    height: 25px;
+    flex: 0 0 46px;
+}
+
+    .channel-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .channel-switch span {
+        position: absolute;
+        inset: 0;
+        background: #ddd8de;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: .2s;
+    }
+
+        .channel-switch span::after {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 19px;
+            height: 19px;
+            border-radius: 50%;
+            background: #fff;
+            transition: .2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,.18);
+        }
+
+    .channel-switch input:checked + span {
+        background: #3155d9;
+    }
+
+        .channel-switch input:checked + span::after {
+            transform: translateX(21px);
+        }
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.channel-step-footer {
+    position: absolute;
+    left: 34px;
+    right: 34px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.channel-step-number {
+    margin-right: auto;
+    color: #6d666e;
+    font-size: 13px;
+}
+
+.channel-primary-button,
+.channel-secondary-button {
+    min-width: 92px;
+    height: 38px;
+    padding: 0 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.channel-primary-button {
+    background: #3155d9;
+    color: #fff;
+}
+
+    .channel-primary-button:hover {
+        background: #2748bd;
+    }
+
+.channel-secondary-button {
+    background: #fff;
+    border: 1px solid #beb7c0;
+    color: #413b43;
+}
+
+    .channel-secondary-button:hover {
+        background: #f5f2f6;
+    }
+
+
+/* =========================================================
+   TOOLTIP
+========================================================= */
+
+[data-tooltip] {
+    position: relative;
+}
+
+    [data-tooltip]::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        left: 50%;
+        bottom: calc(100% + 8px);
+        transform: translateX(-50%) translateY(4px);
+        opacity: 0;
+        visibility: hidden;
+        white-space: nowrap;
+        padding: 6px 9px;
+        border-radius: 5px;
+        background: #111;
+        color: #fff;
+        font-size: 11px;
+        line-height: 1;
+        pointer-events: none;
+        z-index: 100000;
+        transition: opacity .15s ease, transform .15s ease;
+    }
+
+    [data-tooltip]:hover::after {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+
+
+/* TOOLTIP KHÔNG BỊ CẮT */
+
+.channel-section-actions,
+.tf-topbar,
+.rail,
+.sidebar,
+.group-items {
+    overflow: visible;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .channel-modal {
+        width: calc(100vw - 24px);
+    }
+
+    .channel-step {
+        padding: 24px 20px 20px;
+    }
+
+    .channel-step-footer {
+        left: 20px;
+        right: 20px;
+    }
+}
