@@ -1,0 +1,146 @@
+﻿@{
+    ViewData["Title"] = "Sign in";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sign in - TaskFlow</title>
+
+    <link rel="stylesheet" href="~/css/auth/Login.css" asp-append-version="true" />
+</head>
+
+<body>
+
+    <!-- Background decoration -->
+    <div class="bg-shape bg-shape-left"></div>
+    <div class="bg-shape bg-shape-bottom-right"></div>
+    <div class="bg-circle"></div>
+
+    <!-- Top right register -->
+    <div class="top-register">
+        <span>New to TaskFlow?</span>
+
+        <a asp-controller="Auth"
+               asp-action="Register">
+            Create an account
+        </a>
+    </div>
+
+    <!-- Main login -->
+    <main class="login-page">
+
+        <a href="/" class="auth-logo">
+            <img src="~/images/logoongan_final.png"
+                 alt="TaskFlow" />
+        </a>
+        <!-- Heading -->
+        <h1>Enter your email to sign in</h1>
+
+        <p class="subtitle">
+            Or choose another way to sign in.
+        </p>
+
+        <!-- Login form -->
+        <form id="loginForm" class="login-form">
+
+            <!-- Email -->
+            <div class="email-box">
+
+                <div class="email-icon">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                        <path d="M3 7l9 6 9-6"></path>
+                    </svg>
+                </div>
+
+                <input type="email"
+                       id="email"
+                       name="email"
+                       placeholder="name@work-email.com"
+                       autocomplete="email"
+                       required />
+
+            </div>
+
+            <!-- Continue -->
+            <button type="submit" class="continue-btn">
+
+                <span>Continue</span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+        </form>
+
+        <!-- Divider -->
+        <div class="divider">
+
+            <span></span>
+
+            <p>OTHER OPTIONS</p>
+
+            <span></span>
+
+        </div>
+
+        <!-- Social login -->
+        <div class="social-login">
+
+            <button type="button" class="social-btn">
+
+                <span class="google-icon">G</span>
+
+                <span>Google</span>
+
+            </button>
+
+            <button type="button" class="social-btn">
+
+                <span class="apple-icon">●</span>
+
+                <span>Apple</span>
+
+            </button>
+
+        </div>
+
+        <!-- Workspace -->
+        <div class="workspace-help">
+
+            Having trouble?
+
+            <a href="#">
+                Try entering a workspace URL
+            </a>
+
+        </div>
+
+    </main>
+
+    <!-- Footer links -->
+    <footer class="auth-footer">
+
+        <a href="#">Privacy &amp; Terms</a>
+
+        <a href="#">Contact Us</a>
+
+        <a href="#" class="region">
+            <span class="globe">◎</span>
+            Change region
+            <span class="down">⌄</span>
+        </a>
+
+    </footer>
+
+    <script src="~/js/auth.js"></script>
+
+</body>
+</html>

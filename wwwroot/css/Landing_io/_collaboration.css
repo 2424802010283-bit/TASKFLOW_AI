@@ -1,0 +1,933 @@
+/* =========================================================
+   TASKFLOW COLLABORATION
+   ========================================================= */
+
+.tf-collaboration {
+    --tf-purple: #5b21b6;
+    --tf-purple-2: #7c3aed;
+    --tf-purple-3: #9333ea;
+    --tf-dark: #17134d;
+    --tf-text: #26336b;
+    --tf-muted: #6d78a3;
+    position: relative;
+    min-height: 900px;
+    padding: 85px 40px 120px;
+    overflow: hidden;
+    background: radial-gradient( circle at 8% 10%, rgba(183, 148, 255, 0.22), transparent 25% ), radial-gradient( circle at 96% 40%, rgba(152, 205, 255, 0.18), transparent 24% ), linear-gradient( 180deg, #ffffff 0%, #fbfaff 55%, #f5efff 100% );
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.tf-collab-container {
+    width: min(1400px, 100%);
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+
+
+/* =========================================================
+   BACKGROUND BLOBS
+   ========================================================= */
+
+.tf-collab-bg {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.tf-collab-bg-left {
+    width: 430px;
+    height: 280px;
+    top: -100px;
+    left: -150px;
+    background: linear-gradient( 135deg, rgba(174, 130, 255, 0.30), rgba(121, 179, 255, 0.10) );
+    border-radius: 0 0 70% 0;
+    transform: rotate(-7deg);
+}
+
+.tf-collab-bg-right {
+    width: 380px;
+    height: 500px;
+    right: -230px;
+    top: 250px;
+    background: linear-gradient( 145deg, rgba(194, 170, 255, 0.18), rgba(117, 190, 255, 0.13) );
+    border-radius: 50% 0 0 50%;
+}
+
+.tf-collab-bg-bottom {
+    width: 550px;
+    height: 250px;
+    left: -160px;
+    bottom: -150px;
+    background: linear-gradient( 135deg, rgba(219, 178, 255, 0.30), rgba(142, 111, 255, 0.08) );
+    border-radius: 60% 60% 0 0;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.tf-collab-heading {
+    text-align: center;
+    max-width: 1050px;
+    margin: 0 auto 72px;
+}
+
+    .tf-collab-heading h2 {
+        margin: 0;
+        font-size: clamp(42px, 4.6vw, 62px);
+        line-height: 1.03;
+        letter-spacing: -2.8px;
+        font-weight: 800;
+        color: var(--tf-dark);
+    }
+
+        .tf-collab-heading h2 span {
+            background: linear-gradient( 90deg, #47208c, #6d28d9, #9333ea );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+    .tf-collab-heading p {
+        max-width: 720px;
+        margin: 28px auto 0;
+        font-size: 18px;
+        line-height: 1.6;
+        color: var(--tf-muted);
+    }
+
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.tf-collab-content {
+    display: grid;
+    grid-template-columns: minmax(360px, 0.82fr) minmax(620px, 1.18fr);
+    gap: 70px;
+    align-items: center;
+}
+
+
+/* =========================================================
+   LEFT FEATURES
+   ========================================================= */
+
+.tf-collab-features {
+    padding-left: 25px;
+}
+
+.tf-collab-feature {
+    position: relative;
+    display: flex;
+    gap: 22px;
+    padding: 13px 0 13px 18px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+    .tf-collab-feature::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 12px;
+        bottom: 12px;
+        width: 3px;
+        border-radius: 10px;
+        background: linear-gradient( 180deg, #ec4899, #8b5cf6 );
+        opacity: 0;
+        transform: scaleY(0.4);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .tf-collab-feature.active::before {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+    .tf-collab-feature:hover {
+        transform: translateX(5px);
+    }
+
+.tf-feature-icon {
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: linear-gradient( 145deg, #f6edff, #eee5ff );
+    color: #7c3aed;
+    font-size: 29px;
+    box-shadow: inset 0 0 0 1px rgba(124, 58, 237, 0.05), 0 8px 22px rgba(105, 60, 180, 0.08);
+}
+
+.tf-feature-text {
+    padding-top: 2px;
+}
+
+    .tf-feature-text h3 {
+        margin: 0 0 5px;
+        font-size: 19px;
+        line-height: 1.35;
+        color: #5222a5;
+        font-weight: 750;
+    }
+
+    .tf-feature-text p {
+        margin: 0;
+        max-width: 470px;
+        font-size: 15px;
+        line-height: 1.5;
+        color: #7a84a9;
+    }
+
+    .tf-feature-text a {
+        display: inline-flex;
+        margin-top: 7px;
+        gap: 6px;
+        color: #8b21e8;
+        font-size: 15px;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+        .tf-feature-text a:hover {
+            gap: 10px;
+        }
+
+
+/* =========================================================
+   TESTIMONIAL
+   ========================================================= */
+
+.tf-collab-testimonial {
+    margin-top: 25px;
+    margin-left: 78px;
+    padding-left: 20px;
+    border-left: 3px solid #8b3df0;
+}
+
+.tf-testimonial-brand {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #27215d;
+}
+
+.tf-collab-testimonial p {
+    max-width: 410px;
+    margin: 9px 0 15px;
+    font-size: 14px;
+    line-height: 1.45;
+    font-style: italic;
+    color: #7b83a4;
+}
+
+.tf-testimonial-person {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .tf-testimonial-person strong {
+        display: block;
+        font-size: 13px;
+        color: #4b557d;
+    }
+
+    .tf-testimonial-person span {
+        display: block;
+        margin-top: 2px;
+        font-size: 12px;
+        color: #8b94b4;
+    }
+
+
+/* =========================================================
+   AVATAR
+   ========================================================= */
+
+.tf-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 700;
+    color: white;
+}
+
+.tf-avatar-kate {
+    width: 38px;
+    height: 38px;
+    background: linear-gradient( 135deg, #8b5cf6, #ec4899 );
+}
+
+
+/* =========================================================
+   RIGHT VISUAL
+   ========================================================= */
+
+.tf-collab-visual {
+    position: relative;
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   MAIN APP WINDOW
+   ========================================================= */
+
+.tf-app-window {
+    position: relative;
+    z-index: 4;
+    width: min(790px, 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff;
+    border: 2px solid rgba(91, 33, 182, 0.5);
+    box-shadow: 0 35px 80px rgba(68, 30, 130, 0.20), 0 10px 30px rgba(89, 43, 160, 0.15);
+    transform: perspective(1300px) rotateY(-1deg);
+}
+
+
+/* =========================================================
+   APP TOPBAR
+   ========================================================= */
+
+.tf-app-topbar {
+    height: 43px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    background: linear-gradient( 90deg, #4a1d86, #7130b8, #55218f );
+    color: white;
+}
+
+.tf-window-dots {
+    display: flex;
+    gap: 6px;
+}
+
+    .tf-window-dots i {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: block;
+    }
+
+        .tf-window-dots i:nth-child(1) {
+            background: #ff6259;
+        }
+
+        .tf-window-dots i:nth-child(2) {
+            background: #ffc043;
+        }
+
+        .tf-window-dots i:nth-child(3) {
+            background: #32c861;
+        }
+
+.tf-app-search {
+    width: 390px;
+    height: 27px;
+    margin-left: 95px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 8px;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.17);
+    color: rgba(255,255,255,.8);
+    font-size: 11px;
+}
+
+.tf-user {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tf-avatar-main {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+    background: linear-gradient( 135deg, #f59e0b, #ec4899 );
+}
+
+
+/* =========================================================
+   APP BODY
+   ========================================================= */
+
+.tf-app-body {
+    height: 510px;
+    display: flex;
+    background: white;
+}
+
+
+/* =========================================================
+   MINI SIDEBAR
+   ========================================================= */
+
+.tf-mini-sidebar {
+    width: 65px;
+    flex: 0 0 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 0;
+    gap: 12px;
+    color: white;
+    background: linear-gradient( 180deg, #472080, #55269a );
+}
+
+.tf-sidebar-logo {
+    margin-bottom: 8px;
+}
+
+.tf-mini-logo {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    padding: 4px;
+    border-radius: 9px;
+    background: white;
+}
+
+    .tf-mini-logo span {
+        border-radius: 50%;
+    }
+
+        .tf-mini-logo span:nth-child(1) {
+            background: #ef476f;
+        }
+
+        .tf-mini-logo span:nth-child(2) {
+            background: #06d6a0;
+        }
+
+        .tf-mini-logo span:nth-child(3) {
+            background: #118ab2;
+        }
+
+        .tf-mini-logo span:nth-child(4) {
+            background: #ffd166;
+        }
+
+.tf-side-icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    color: rgba(255,255,255,.75);
+    font-size: 18px;
+}
+
+    .tf-side-icon.active {
+        background: rgba(255,255,255,.18);
+        color: white;
+    }
+
+    .tf-side-icon:hover {
+        background: rgba(255,255,255,.13);
+    }
+
+.tf-side-plus {
+    margin-top: auto;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,.15);
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   WORKSPACE SIDEBAR
+   ========================================================= */
+
+.tf-workspace-sidebar {
+    width: 205px;
+    flex: 0 0 205px;
+    padding: 18px 12px;
+    color: rgba(255,255,255,.86);
+    background: linear-gradient( 180deg, #55248f, #682db0 );
+    font-size: 12px;
+}
+
+.tf-workspace-title {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 22px;
+    font-size: 15px;
+}
+
+    .tf-workspace-title span {
+        margin-left: auto;
+    }
+
+.tf-workspace-avatar {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    background: white;
+    color: #6d28d9;
+    font-weight: 800;
+}
+
+.tf-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 9px;
+    color: rgba(255,255,255,.82);
+}
+
+    .tf-menu-item span {
+        width: 16px;
+    }
+
+.tf-menu-heading {
+    margin: 19px 8px 6px;
+    font-size: 11px;
+    color: rgba(255,255,255,.58);
+    font-weight: 700;
+}
+
+    .tf-menu-heading span {
+        color: #ffd34e;
+    }
+
+.tf-channel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 9px;
+    border-radius: 5px;
+    color: rgba(255,255,255,.78);
+}
+
+    .tf-channel.active {
+        color: white;
+        background: linear-gradient( 90deg, #9a45f2, #7b32cf );
+        box-shadow: 0 5px 14px rgba(0,0,0,.15);
+    }
+
+    .tf-channel span {
+        font-weight: 700;
+    }
+
+.tf-agent {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 9px;
+    color: white;
+}
+
+.tf-agent-avatar {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: linear-gradient( 135deg, #5eead4, #22c55e );
+    color: #153e3e;
+    font-size: 8px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CHAT
+   ========================================================= */
+
+.tf-chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    min-width: 0;
+}
+
+.tf-chat-header {
+    height: 58px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    border-bottom: 1px solid #ececf3;
+    color: #27215e;
+    font-size: 16px;
+}
+
+    .tf-chat-header span {
+        margin-left: 6px;
+        color: #756f9d;
+    }
+
+.tf-chat-content {
+    flex: 1;
+    padding: 24px 27px;
+    overflow: hidden;
+}
+
+.tf-message {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.tf-message-avatar {
+    width: 35px;
+    height: 35px;
+    flex: 0 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.avatar-matt {
+    background: linear-gradient( 135deg, #a56b43, #e5a26e );
+}
+
+.avatar-sara {
+    background: linear-gradient( 135deg, #6b7280, #d1d5db );
+}
+
+.avatar-ai {
+    background: linear-gradient( 135deg, #8b5cf6, #c084fc );
+}
+
+.tf-message-body {
+    min-width: 0;
+}
+
+.tf-message-meta {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 3px;
+}
+
+    .tf-message-meta strong {
+        color: #25234e;
+        font-size: 13px;
+    }
+
+    .tf-message-meta > span:not(.tf-app-label) {
+        color: #9a9bb0;
+        font-size: 10px;
+    }
+
+.tf-message-body p {
+    margin: 0;
+    color: #5c6381;
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.tf-message-body ul {
+    margin: 6px 0 0;
+    padding-left: 18px;
+    color: #59617f;
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+.mention {
+    color: #6231b8;
+    font-weight: 700;
+}
+
+.tf-app-label {
+    padding: 2px 5px;
+    border-radius: 4px;
+    background: #eee7ff;
+    color: #7441c7;
+    font-size: 8px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CHAT INPUT
+   ========================================================= */
+
+.tf-chat-input {
+    height: 47px;
+    margin: 0 20px 18px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #e1def0;
+    border-radius: 10px;
+    color: #a2a4b9;
+    font-size: 11px;
+}
+
+    .tf-chat-input button {
+        width: 26px;
+        height: 26px;
+        border: 0;
+        border-radius: 50%;
+        background: #f0e9ff;
+        color: #7938d2;
+        font-size: 19px;
+        cursor: pointer;
+    }
+
+    .tf-chat-input > span {
+        margin-left: 10px;
+    }
+
+.tf-input-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 13px;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   FLOATING APPS
+   ========================================================= */
+
+.tf-floating-app {
+    position: absolute;
+    z-index: 7;
+    width: 76px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 17px;
+    background: rgba(255,255,255,.92);
+    border: 1px solid rgba(123, 58, 237, .10);
+    box-shadow: 0 20px 40px rgba(86, 43, 160, .16);
+    transition: transform .35s ease;
+}
+
+    .tf-floating-app:hover {
+        transform: translateY(-8px) rotate(2deg);
+    }
+
+.tf-floating-taskflow {
+    left: -25px;
+    top: 170px;
+}
+
+.tf-floating-ai {
+    right: -38px;
+    top: 225px;
+    color: #7c3aed;
+    font-size: 34px;
+}
+
+.tf-floating-salesforce {
+    right: -25px;
+    bottom: 105px;
+    color: #168de2;
+    font-size: 40px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .tf-collab-content {
+        grid-template-columns: 1fr;
+    }
+
+    .tf-collab-features {
+        max-width: 720px;
+        margin: 0 auto;
+    }
+
+    .tf-collab-visual {
+        max-width: 850px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .tf-collaboration {
+        padding: 65px 20px 90px;
+    }
+
+    .tf-collab-heading {
+        margin-bottom: 45px;
+    }
+
+        .tf-collab-heading h2 {
+            font-size: 42px;
+            letter-spacing: -1.8px;
+        }
+
+        .tf-collab-heading p {
+            font-size: 15px;
+        }
+
+    .tf-collab-features {
+        padding-left: 0;
+    }
+
+    .tf-collab-testimonial {
+        margin-left: 0;
+    }
+
+    .tf-collab-visual {
+        min-height: 430px;
+    }
+
+    .tf-app-window {
+        transform: none;
+    }
+
+    .tf-mini-sidebar {
+        width: 50px;
+        flex-basis: 50px;
+    }
+
+    .tf-workspace-sidebar {
+        width: 150px;
+        flex-basis: 150px;
+    }
+
+    .tf-app-search {
+        margin-left: 30px;
+        width: 220px;
+    }
+
+    .tf-floating-taskflow {
+        left: -10px;
+    }
+
+    .tf-floating-ai {
+        right: -10px;
+    }
+
+    .tf-floating-salesforce {
+        right: 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .tf-collab-heading h2 {
+        font-size: 35px;
+    }
+
+    .tf-collab-content {
+        gap: 35px;
+    }
+
+    .tf-feature-icon {
+        width: 48px;
+        height: 48px;
+        flex-basis: 48px;
+        font-size: 22px;
+    }
+
+    .tf-feature-text h3 {
+        font-size: 16px;
+    }
+
+    .tf-feature-text p {
+        font-size: 13px;
+    }
+
+    .tf-workspace-sidebar {
+        display: none;
+    }
+
+    .tf-app-topbar {
+        height: 38px;
+    }
+
+    .tf-app-search {
+        margin-left: 20px;
+        width: 150px;
+    }
+
+    .tf-app-body {
+        height: 420px;
+    }
+
+    .tf-chat-content {
+        padding: 18px;
+    }
+
+    .tf-floating-app {
+        transform: scale(.7);
+    }
+}
+
+.tf-collaboration .tf-collab-heading,
+.tf-collaboration .tf-collab-feature,
+.tf-collaboration .tf-collab-testimonial,
+.tf-collaboration .tf-app-window {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.tf-collaboration.tf-collab-visible .tf-collab-heading,
+.tf-collaboration.tf-collab-visible .tf-collab-feature,
+.tf-collaboration.tf-collab-visible .tf-collab-testimonial,
+.tf-collaboration.tf-collab-visible .tf-app-window {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+    .tf-collaboration.tf-collab-visible .tf-collab-feature:nth-child(1) {
+        transition-delay: .05s;
+    }
+
+    .tf-collaboration.tf-collab-visible .tf-collab-feature:nth-child(2) {
+        transition-delay: .12s;
+    }
+
+    .tf-collaboration.tf-collab-visible .tf-collab-feature:nth-child(3) {
+        transition-delay: .19s;
+    }
+
+    .tf-collaboration.tf-collab-visible .tf-collab-feature:nth-child(4) {
+        transition-delay: .26s;
+    }

@@ -1,0 +1,77 @@
+/* ===== Khung kênh chính ===== */
+.main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--panel);
+    color: var(--text);
+    border-radius: 0;
+    overflow: hidden
+}
+
+.ch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px 0 28px;
+    height: 62px;
+    flex: none
+}
+
+    .ch h2 {
+        font-size: 22px;
+        font-weight: 800;
+        color: #3b3a3b;
+        display: flex;
+        gap: 14px;
+        align-items: center
+    }
+
+    .ch .r {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        font-size: 20px;
+        color: #3b3a3b
+    }
+
+        .ch .r .inv {
+            font-size: 16px;
+            font-weight: 600;
+            color: #3b3a3b
+        }
+
+.tabs {
+    display: flex;
+    gap: 26px;
+    padding: 0 28px;
+    height: 47px;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    font-size: 16px;
+    font-weight: 600;
+    flex: none
+}
+
+    .tabs .a {
+        border-bottom: 3px solid #4a154b;
+        height: 47px;
+        display: flex;
+        align-items: center;
+        gap: 8px
+    }
+
+    .tabs .t {
+        color: #3b3a3b;
+        font-weight: 600;
+        display: flex;
+        gap: 8px;
+        align-items: center
+    }
+
+.scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 0 10px
+}

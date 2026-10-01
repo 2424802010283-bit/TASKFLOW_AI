@@ -1,0 +1,538 @@
+/* ===== Cột icon bên trái ===== */
+.rail {
+    width: 88px;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 700
+}
+
+.ws {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    background: #bbb;
+    color: #333;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 14px
+}
+
+.ri {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 6px 0;
+    width: 80px;
+    text-align: center;
+    line-height: 1.05;
+    cursor: pointer
+}
+
+    .ri i {
+        font-style: normal;
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        font-size: 23px
+    }
+
+    .ri.on i {
+        background: rgba(255,255,255,.28)
+    }
+
+    .ri:hover i {
+        background: rgba(255,255,255,.15)
+    }
+
+.rail .sp {
+    flex: 1
+}
+
+.circ {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.22);
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    margin-bottom: 14px
+}
+
+.me {
+    width: 46px;
+    height: 46px;
+    border-radius: 9px;
+    background: #fff;
+    display: grid;
+    place-items: center;
+    margin-bottom: 8px;
+    font-size: 30px;
+    color: #1fb5b0
+}
+
+/* ===== Sidebar ===== */
+.side {
+    width: 378px;
+    flex: none;
+    background: var(--side);
+    border-radius: 10px 0 0 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    font-size: 18px
+}
+
+    .side::-webkit-scrollbar {
+        display: none
+    }
+
+.sh {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px 0 20px;
+    height: 62px;
+    font-size: 23px;
+    font-weight: 900;
+    position: sticky;
+    top: 0;
+    background: var(--side);
+    z-index: 2
+}
+
+    .sh span {
+        font-size: 22px;
+        font-weight: 400;
+        display: flex;
+        gap: 16px
+    }
+
+.promo {
+    background: linear-gradient(#7c3a86,#6a2b74);
+    padding: 22px 20px 20px;
+    position: relative;
+    margin-bottom: 10px
+}
+
+    .promo h4 {
+        font-size: 18px;
+        line-height: 1.3;
+        font-weight: 800;
+        width: 290px
+    }
+
+    .promo small {
+        display: block;
+        margin: 6px 0 18px;
+        font-size: 15px;
+        opacity: .85
+    }
+
+    .promo .x {
+        position: absolute;
+        right: 18px;
+        top: 16px;
+        cursor: pointer;
+        font-size: 18px
+    }
+
+    .promo .gift {
+        position: absolute;
+        right: 34px;
+        top: 26px;
+        font-size: 56px
+    }
+
+    .promo button {
+        width: 100%;
+        height: 45px;
+        border: 0;
+        border-radius: 6px;
+        background: #f5eaf7;
+        color: #4a154b;
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer
+    }
+
+.find {
+    margin: 0 10px 12px;
+    height: 35px;
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 15px;
+    gap: 8px
+}
+
+.sec {
+    padding: 0 10px
+}
+
+.it {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 10px;
+    height: 35px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #dfcfe0;
+    white-space: nowrap
+}
+
+    .it:hover {
+        background: rgba(255,255,255,.1)
+    }
+
+    .it b {
+        width: 22px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 20px
+    }
+
+    .it.on {
+        background: #f8f0f9;
+        color: #4a154b;
+        font-weight: 600
+    }
+
+    .it.hd {
+        color: #e8dcea
+    }
+
+.hint {
+    padding: 6px 20px 14px 28px;
+    font-size: 15px;
+    color: #dfcfe0;
+    font-weight: 600
+}
+
+.hr {
+    height: 1px;
+    background: rgba(255,255,255,.2);
+    margin: 10px 10px 12px
+}
+
+.badge {
+    margin-left: auto;
+    background: #d9c2dc;
+    color: #3f0e40;
+    border-radius: 11px;
+    font-size: 13px;
+    font-weight: 800;
+    min-width: 32px;
+    text-align: center;
+    padding: 2px 0
+}
+
+
+/* =========================================================
+   SIDEBAR SECTION HEADER
+========================================================= */
+/* =========================================================
+   TASKFLOW BLUE SIDEBAR
+   CHANNELS / DMS / APPS
+========================================================= */
+
+/* ---------- SIDEBAR ROOT ---------- */
+
+.side {
+    background: var(--side) !important;
+    color: #fff !important;
+}
+
+
+/* ---------- SECTION ---------- */
+
+.sidebar-group {
+    width: 100%;
+    margin-top: 10px;
+    background: transparent !important;
+}
+
+
+/* ---------- SECTION HEADER ---------- */
+
+.channel-section-header {
+    width: 100%;
+    min-height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px 0 12px;
+    background: transparent !important;
+}
+
+
+/* ---------- SECTION TITLE ---------- */
+
+.channel-section-title {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0;
+    border: 0;
+    background: transparent !important;
+    color: rgba(255,255,255,.92);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: left;
+}
+
+
+/* ---------- CHEVRON ---------- */
+
+.channel-chevron {
+    width: 12px;
+    height: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,.75);
+    font-size: 8px;
+}
+
+
+/* ---------- SECTION ICON ---------- */
+
+.section-icon {
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,.88);
+    font-size: 13px;
+    flex: 0 0 18px;
+}
+
+
+/* ---------- ACTION BUTTONS ---------- */
+
+.channel-section-actions {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background: transparent !important;
+}
+
+
+.sidebar-icon-button {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    border-radius: 5px;
+    background: transparent !important;
+    color: rgba(255,255,255,.82);
+    cursor: pointer;
+    font-size: 12px;
+}
+
+
+    .sidebar-icon-button:hover {
+        background: var(--side-hover) !important;
+        color: #fff;
+    }
+
+
+/* =========================================================
+   CHILD CONTAINER
+========================================================= */
+
+.group-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: transparent !important;
+}
+
+
+    /* =========================================================
+   CHILD ITEM
+========================================================= */
+
+    .group-items .it {
+        width: 100%;
+        min-height: 36px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 10px 0 38px !important;
+        border: 0;
+        border-radius: 6px;
+        background: transparent !important;
+        color: rgba(255,255,255,.88);
+        font: inherit;
+        font-size: 17px;
+        font-weight: 400;
+        cursor: pointer;
+        text-align: left;
+        box-shadow: none !important;
+    }
+
+
+        /* hover */
+
+        .group-items .it:hover {
+            background: var(--side-hover) !important;
+            color: #fff !important;
+        }
+
+
+        /* =========================================================
+   ACTIVE CHANNEL
+========================================================= */
+
+        .group-items .it.on {
+            background: var(--side-active) !important;
+            color: #fff !important;
+            font-weight: 700;
+            box-shadow: none !important;
+        }
+
+
+        /* =========================================================
+   HASHTAG
+========================================================= */
+
+        .group-items .it > b {
+            width: 18px;
+            flex: 0 0 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent !important;
+            color: inherit;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+
+    /* =========================================================
+   ADD CHANNEL / INVITE / CONNECT
+========================================================= */
+
+    .group-items .add-row {
+        color: rgba(255,255,255,.74) !important;
+        background: transparent !important;
+    }
+
+
+        .group-items .add-row:hover {
+            color: #fff !important;
+            background: var(--side-hover) !important;
+        }
+
+
+/* ---------- PLUS ---------- */
+
+.small-plus {
+    width: 21px !important;
+    height: 21px !important;
+    flex: 0 0 21px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: rgba(255,255,255,.13) !important;
+    color: #fff !important;
+    font-size: 15px !important;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   APPS
+========================================================= */
+
+.group-items .app-row {
+    color: #fff !important;
+    font-weight: 700 !important;
+    background: transparent !important;
+}
+
+
+    .group-items .app-row:hover {
+        background: var(--side-hover) !important;
+    }
+
+
+/* app icon */
+
+.app-icon {
+    width: 21px !important;
+    height: 21px !important;
+    flex: 0 0 21px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent !important;
+    color: #fff !important;
+    font-size: 15px !important;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.group-items .badge {
+    margin-left: auto;
+    min-width: 21px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.85) !important;
+    color: #1B4F93 !important;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   PREVENT WHITE BLOCK
+========================================================= */
+
+.sec,
+.sidebar-group,
+.group-items,
+.channel-section-header,
+.channel-section-actions {
+    background-color: transparent !important;
+}
+
+
+/* =========================================================
+   KEEP SIDEBAR BLUE EVEN WITH OTHER CSS
+========================================================= */
+
+.side,
+.side * {
+    --sidebar-transparent: transparent;
+}

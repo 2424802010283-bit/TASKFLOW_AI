@@ -1,0 +1,691 @@
+/* =========================================================
+   TASKFLOW - DEEP DIVE
+   ========================================================= */
+
+.deep-dive {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: radial-gradient( circle at 15% 20%, rgba(218, 196, 255, .32), transparent 34% ), radial-gradient( circle at 88% 15%, rgba(239, 220, 255, .4), transparent 35% ), linear-gradient( 180deg, #faf7ff 0%, #ffffff 48%, #ffffff 100% );
+    color: #17121d;
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+.deep-dive__container {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 74px 0 110px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.deep-dive__header {
+    text-align: center;
+    margin-bottom: 46px;
+}
+
+    .deep-dive__header h2 {
+        margin: 0;
+        font-size: clamp(38px, 4vw, 56px);
+        line-height: 1.08;
+        letter-spacing: -2.2px;
+        font-weight: 800;
+        color: #08070a;
+    }
+
+        .deep-dive__header h2 span {
+            color: #5b0f7a;
+        }
+
+
+/* =========================================================
+   OVERVIEW
+   ========================================================= */
+
+.deep-dive__overview {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 50px;
+    min-height: 390px;
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.deep-dive__stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.deep-dive__stat {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: center;
+    gap: 18px;
+}
+
+    .deep-dive__stat strong {
+        font-size: 44px;
+        line-height: 1;
+        letter-spacing: -2px;
+        font-weight: 800;
+        color: #09070c;
+        text-align: right;
+    }
+
+    .deep-dive__stat span {
+        max-width: 300px;
+        font-size: 14px;
+        line-height: 1.45;
+        color: #38313c;
+    }
+
+    .deep-dive__stat sup {
+        font-size: 9px;
+        vertical-align: super;
+    }
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.deep-dive__divider {
+    width: 1px;
+    background: #1b1720;
+    opacity: .9;
+}
+
+
+/* =========================================================
+   AWARDS
+   ========================================================= */
+
+.deep-dive__awards {
+    padding: 10px 0 0;
+}
+
+    .deep-dive__awards h3 {
+        margin: 0 0 14px;
+        font-size: 30px;
+        line-height: 1.15;
+        letter-spacing: -1px;
+        font-weight: 800;
+        color: #111015;
+    }
+
+    .deep-dive__awards p {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.5;
+        color: #413945;
+    }
+
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.deep-dive__badges {
+    display: grid;
+    grid-template-columns: repeat(3, 92px);
+    gap: 30px 42px;
+    margin-top: 48px;
+}
+
+.deep-dive__badge {
+    position: relative;
+    width: 88px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 2px solid #25212a;
+    clip-path: polygon( 0 0, 100% 0, 100% 78%, 50% 100%, 0 78% );
+    box-shadow: 0 7px 15px rgba(35, 20, 45, .12);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+    .deep-dive__badge:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 15px 25px rgba(35, 20, 45, .18);
+    }
+
+    .deep-dive__badge::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 7px;
+        background: #5935a5;
+    }
+
+    .deep-dive__badge.badge--blue::after {
+        background: #2498e8;
+    }
+
+    .deep-dive__badge.badge--orange::after {
+        background: linear-gradient( 90deg, #ff9c00, #ff3d17 );
+    }
+
+.badge__top {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 6px;
+    font-weight: 800;
+    letter-spacing: .05em;
+    color: #333;
+}
+
+.deep-dive__badge strong {
+    margin-top: 6px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.05;
+    font-weight: 800;
+    color: #101010;
+}
+
+.deep-dive__badge small {
+    margin-top: 5px;
+    font-size: 5px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    color: #222;
+}
+
+
+/* =========================================================
+   ARTICLE HEADER
+   ========================================================= */
+
+.deep-dive__articles-header {
+    text-align: center;
+    margin: 64px 0 32px;
+}
+
+    .deep-dive__articles-header h3 {
+        margin: 0;
+        font-size: 30px;
+        line-height: 1.2;
+        letter-spacing: -1px;
+        font-weight: 800;
+        color: #17131a;
+    }
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.deep-dive__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.deep-dive-card {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #ece8ef;
+    box-shadow: 0 8px 28px rgba(31, 15, 45, .08);
+    transition: transform .3s ease, box-shadow .3s ease;
+    cursor: pointer;
+}
+
+    .deep-dive-card:hover {
+        transform: translateY(-9px);
+        box-shadow: 0 20px 42px rgba(31, 15, 45, .16);
+    }
+
+.deep-dive-card__image {
+    position: relative;
+    height: 168px;
+    overflow: hidden;
+}
+
+.deep-dive-card__content {
+    padding: 22px 20px 24px;
+}
+
+.deep-dive-card__tag {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .09em;
+    color: #6b2387;
+}
+
+.deep-dive-card__content h4 {
+    margin: 9px 0 18px;
+    font-size: 19px;
+    line-height: 1.25;
+    letter-spacing: -.4px;
+    font-weight: 750;
+    color: #161218;
+}
+
+.deep-dive-card__content a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #5b0f7a;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 750;
+}
+
+    .deep-dive-card__content a span {
+        transition: transform .2s ease;
+    }
+
+.deep-dive-card:hover .deep-dive-card__content a span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   CARD 1 - NETWORK
+   ========================================================= */
+
+.deep-dive-card__image--network {
+    background: radial-gradient( circle at center, #733cff 0%, #4013bd 48%, #21006e 100% );
+}
+
+.card-network {
+    position: absolute;
+    inset: 20px;
+}
+
+    .card-network::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 110px;
+        height: 2px;
+        transform: translate(-50%, -50%) rotate(45deg);
+        background: rgba(255,255,255,.75);
+        box-shadow: 0 0 0 1px rgba(255,255,255,.05);
+    }
+
+    .card-network::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 110px;
+        height: 2px;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        background: rgba(255,255,255,.75);
+    }
+
+    .card-network span {
+        position: absolute;
+        width: 27px;
+        height: 27px;
+        border-radius: 9px;
+        background: linear-gradient( 145deg, #ff70d8, #9b50ff );
+        box-shadow: 0 5px 14px rgba(0,0,0,.2);
+    }
+
+        .card-network span:nth-child(1) {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .card-network span:nth-child(2) {
+            left: 10%;
+            top: 20%;
+        }
+
+        .card-network span:nth-child(3) {
+            right: 10%;
+            top: 20%;
+        }
+
+        .card-network span:nth-child(4) {
+            left: 5%;
+            bottom: 18%;
+        }
+
+        .card-network span:nth-child(5) {
+            right: 5%;
+            bottom: 18%;
+        }
+
+        .card-network span:nth-child(6) {
+            left: 42%;
+            top: 2%;
+        }
+
+        .card-network span:nth-child(7) {
+            left: 42%;
+            bottom: 2%;
+        }
+
+
+/* =========================================================
+   CARD 2 - AI
+   ========================================================= */
+
+.deep-dive-card__image--ai {
+    background: linear-gradient( 145deg, #b9d4ff, #8f8ee8 );
+}
+
+.card-ai {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 90px;
+    height: 110px;
+    transform: translate(-50%, -50%);
+}
+
+.card-ai__head {
+    position: absolute;
+    width: 48px;
+    height: 42px;
+    left: 21px;
+    top: 6px;
+    border-radius: 15px;
+    background: linear-gradient( 145deg, #fafafa, #cfd8e8 );
+    border: 3px solid #313747;
+}
+
+    .card-ai__head::before,
+    .card-ai__head::after {
+        content: "";
+        position: absolute;
+        top: 16px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #5424a6;
+    }
+
+    .card-ai__head::before {
+        left: 10px;
+    }
+
+    .card-ai__head::after {
+        right: 10px;
+    }
+
+.card-ai__body {
+    position: absolute;
+    left: 12px;
+    top: 49px;
+    width: 66px;
+    height: 52px;
+    border-radius: 20px 20px 12px 12px;
+    background: linear-gradient( 180deg, #eef2fa, #aab4c8 );
+    border: 3px solid #313747;
+}
+
+.card-ai__node {
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    border-radius: 7px;
+    background: #fff;
+    box-shadow: 0 3px 8px rgba(0,0,0,.2);
+}
+
+.node-one {
+    left: -8px;
+    top: 17px;
+}
+
+.node-two {
+    right: -8px;
+    top: 38px;
+}
+
+.node-three {
+    left: 3px;
+    bottom: -2px;
+}
+
+
+/* =========================================================
+   CARD 3 - WORKSPACE
+   ========================================================= */
+
+.deep-dive-card__image--workspace {
+    background: linear-gradient( 145deg, #d9ecff, #c8d7f8 );
+}
+
+.mini-workspace {
+    position: absolute;
+    width: 155px;
+    height: 108px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-2deg);
+    background: #fff;
+    border: 5px solid #50115f;
+    border-radius: 7px;
+    box-shadow: 0 12px 20px rgba(45, 25, 65, .2);
+}
+
+.mini-workspace__bar {
+    height: 18px;
+    background: #561268;
+}
+
+.mini-workspace__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+
+    .mini-workspace__content div {
+        height: 45px;
+        border-radius: 4px;
+        background: #eee8f5;
+    }
+
+        .mini-workspace__content div:nth-child(2) {
+            background: #e2d5f1;
+        }
+
+        .mini-workspace__content div:nth-child(3) {
+            background: #d4e8f7;
+        }
+
+.mini-bot {
+    position: absolute;
+    right: -28px;
+    bottom: -18px;
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff;
+    color: #6a1b80;
+    font-size: 22px;
+    box-shadow: 0 7px 15px rgba(0,0,0,.2);
+}
+
+
+/* =========================================================
+   CARD 4 - MEETING
+   ========================================================= */
+
+.deep-dive-card__image--meeting {
+    background: linear-gradient( 145deg, #e5f5df, #cce8d0 );
+}
+
+.meeting-window {
+    position: absolute;
+    width: 185px;
+    height: 112px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 12px 22px rgba(30,60,35,.18);
+}
+
+.meeting-window__top {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-left: 9px;
+    background: #65207b;
+}
+
+    .meeting-window__top span {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #fff;
+    }
+
+.meeting-people {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    padding: 10px;
+    width: 105px;
+}
+
+    .meeting-people div {
+        height: 27px;
+        border-radius: 5px;
+        background: linear-gradient( 145deg, #e5b9a0, #8b6a62 );
+    }
+
+.meeting-chat {
+    position: absolute;
+    right: 8px;
+    top: 30px;
+    width: 55px;
+}
+
+    .meeting-chat span {
+        display: block;
+        height: 6px;
+        margin-bottom: 6px;
+        border-radius: 4px;
+        background: #dfe8df;
+    }
+
+        .meeting-chat span:nth-child(2) {
+            width: 80%;
+        }
+
+        .meeting-chat span:nth-child(3) {
+            width: 65%;
+        }
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .deep-dive__overview {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .deep-dive__divider {
+        display: none;
+    }
+
+    .deep-dive__stats {
+        gap: 30px;
+    }
+
+    .deep-dive__stat {
+        grid-template-columns: 120px 1fr;
+    }
+
+    .deep-dive__awards {
+        border-top: 1px solid #27222b;
+        padding-top: 35px;
+    }
+
+    .deep-dive__cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .deep-dive__container {
+        width: min( 100% - 30px, 520px );
+        padding-top: 55px;
+        padding-bottom: 80px;
+    }
+
+    .deep-dive__header h2 {
+        font-size: 36px;
+        letter-spacing: -1.5px;
+    }
+
+    .deep-dive__stat {
+        grid-template-columns: 105px 1fr;
+        gap: 14px;
+    }
+
+        .deep-dive__stat strong {
+            font-size: 36px;
+        }
+
+    .deep-dive__badges {
+        grid-template-columns: repeat(3, 80px);
+        gap: 22px;
+    }
+
+    .deep-dive__badge {
+        width: 78px;
+        height: 92px;
+    }
+
+    .deep-dive__cards {
+        grid-template-columns: 1fr;
+    }
+
+    .deep-dive-card__image {
+        height: 190px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .deep-dive-card,
+    .deep-dive__badge,
+    .deep-dive-card__content a span {
+        transition: none;
+    }
+}

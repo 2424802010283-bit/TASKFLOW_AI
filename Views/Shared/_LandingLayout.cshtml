@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TASKFLOW_AI</title>
+    <!-- Font chữ chuẩn Figma -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Link file CSS tĩnh chứa Design Tokens -->
+    @* <link rel="stylesheet" href="~/css/landing.css" asp-append-version="true" /> *@
+    <link rel="stylesheet"
+          href="~/css/Landing_io/_landing-base.css"
+          asp-append-version="true" />
+
+    <link rel="stylesheet"
+          href="~/css/Landing_io/_navbar.css"
+          asp-append-version="true" />
+
+    <link rel="stylesheet"
+          href="~/css/Landing_io/_hero.css"
+          asp-append-version="true" />
+
+    <link rel="stylesheet"
+          href="~/css/Landing_io/_ai-agents.css"
+          asp-append-version="true" />
+
+    <link rel="stylesheet"
+          href="~/css/Landing_io/_updates.css"
+          asp-append-version="true" />
+
+    <link rel="stylesheet"
+          href="~/css/Landing_io/_context.css"
+          asp-append-version="true" />
+
+    <link rel="stylesheet"
+          href="~/css/Landing_io/_collaboration.css"
+          asp-append-version="true" />
+    <link rel="stylesheet"
+          href="~/css/Landing_io/_workmanagement.css"
+          asp-append-version="true" />
+    <link rel="stylesheet"
+          href="~/css/Landing_io/_platform.css"
+          asp-append-version="true" />
+
+    <link rel="stylesheet"
+          href="~/css/Landing_io/_platformcompanies.css"
+          asp-append-version="true" />
+    <link rel="stylesheet"
+          href="~/css/Landing_io/_deepdive.css"
+          asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Landing_io/_finalcta.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Landing_io/_footer.css" asp-append-version="true" />
+
+
+</head>
+<body>
+    <!-- Lắp thanh Navbar lên đầu -->
+    <partial name="Landing/_Navbar" />
+
+    <!-- Ruột trang chủ sẽ đổ vào đây -->
+    <main>
+        @RenderBody()
+    </main>
+
+
+    <!-- Lắp final CTA và chân trang xuống cuối -->
+ 
+    <partial name="Landing/_FinalCta" />
+    <partial name="Landing/_Footer" />
+
+    <script src="~/js/Landing_io/navbar.js"
+            asp-append-version="true"></script>
+    <script src="~/js/Landing_io/collaboration.js"
+            asp-append-version="true"></script>
+
+    <script src="~/js/Landing_io/context.js"
+            asp-append-version="true"></script>
+
+    <script src="~/js/Landing_io/updates.js"
+            asp-append-version="true"></script>
+    <script src="~/js/Landing_io/workmanagement.js"
+            asp-append-version="true"></script>
+    <script src="~/js/Landing_io/platform.js"
+            asp-append-version="true"></script>
+    <script src="~/js/Landing_io/platformcompanies.js"
+            asp-append-version="true"></script>
+    <script src="~/js/Landing_io/deepdive.js"
+            asp-append-version="true"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

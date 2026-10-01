@@ -1,0 +1,556 @@
+﻿<!-- =====================================================
+             LEFT RAIL
+        ====================================================== -->
+
+<nav class="rail">
+
+    <div class="ws">
+        H
+    </div>
+
+
+    <div class="ri on"
+         data-tooltip="Home">
+
+        <i class="fa-solid fa-house"></i>
+        Home
+
+    </div>
+
+
+    <div class="ri"
+         data-tooltip="Direct messages">
+
+        <i class="fa-regular fa-comments"></i>
+        Direct Messages
+
+    </div>
+
+
+    <div class="ri"
+         data-tooltip="Activity">
+
+        <i class="fa-regular fa-bell"></i>
+        Activity
+
+    </div>
+
+
+    <div class="ri"
+         data-tooltip="Files">
+
+        <i class="fa-regular fa-file"></i>
+        Files
+
+    </div>
+
+
+    <div class="ri"
+         data-tooltip="More">
+
+        <i>•••</i>
+        More
+
+    </div>
+
+
+    <div style="width:32px;
+        height:1px;
+        background:rgba(255,255,255,.3);
+        margin:8px 0">
+    </div>
+
+
+    <div class="ri"
+         data-tooltip="Administrator">
+
+        <i>⚙</i>
+        Administrator
+
+    </div>
+
+
+    <div class="circ"
+         style="margin-top:8px"
+         data-tooltip="Add workspace">
+
+        +
+
+    </div>
+
+
+    <div class="circ"
+         style="margin-top:10px"
+         data-tooltip="Theme">
+
+        ☾
+
+    </div>
+
+
+    <div class="sp"></div>
+
+
+    <div class="me"
+         data-tooltip="@@currentName">
+
+        ☻
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+
+<aside class="side"
+       id="side">
+
+
+    <!-- =================================================
+                 WORKSPACE HEADER
+            ================================================== -->
+
+    <div class="sh">
+
+        <span>
+            @Model.WorkspaceName
+        </span>
+
+        <span>
+            ⌄
+        </span>
+
+        <span>
+            ⚙ ✎
+        </span>
+
+    </div>
+
+
+
+    <!-- =================================================
+                 PROMO
+            ================================================== -->
+
+    <div class="promo"
+         id="promo">
+
+        <span class="x"
+              onclick="document.getElementById('promo').classList.add('hide')">
+            ✕
+        </span>
+
+        <span class="gift">
+            🎁
+        </span>
+
+        <h4>
+            Get 50% off TaskFlow Pro
+        </h4>
+
+        <small>
+            7 days remaining
+        </small>
+
+        <button>
+            🚀 Upgrade to Pro
+        </button>
+
+    </div>
+
+
+
+    <!-- =================================================
+                 FIND CONVERSATION
+            ================================================== -->
+
+    <div class="find">
+        ☰ Find a conversation...
+    </div>
+
+
+
+    <div class="sec">
+
+
+        <!-- =================================================
+                     TEAM CALLS
+                ================================================== -->
+
+        <div class="it hd">
+
+            <b>
+                🎧
+            </b>
+
+            Team calls
+
+        </div>
+
+
+        <!-- =================================================
+                     DIRECTORIES
+                ================================================== -->
+
+        <div class="it hd">
+
+            <b>
+                ▤
+            </b>
+
+            Directories
+
+        </div>
+
+
+        <div class="hr"></div>
+
+
+        <!-- =================================================
+                     FAVORITES
+                ================================================== -->
+
+        <div class="it hd">
+
+            <b>
+                ☆
+            </b>
+
+            Favorites
+
+        </div>
+
+
+        <div class="hint">
+            Drag and drop important items here
+        </div>
+
+
+
+        <!-- =================================================
+                     CHANNELS
+                ================================================== -->
+
+        <div class="sidebar-group">
+
+
+            <!-- Channels header -->
+
+            <div class="channel-section-header">
+
+
+                <button type="button"
+                        class="channel-section-title"
+                        data-tooltip="Channels">
+
+                    <span class="channel-chevron">
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </span>
+
+
+                    <span class="section-icon">
+
+                        <i class="fa-solid fa-hashtag"></i>
+
+                    </span>
+
+
+                    <span>
+                        Channels
+                    </span>
+
+                </button>
+
+
+
+                <div class="channel-section-actions">
+
+
+                    <button type="button"
+                            id="addChannelButton"
+                            class="sidebar-icon-button"
+                            data-tooltip="Create a channel">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+
+                    <button type="button"
+                            class="sidebar-icon-button"
+                            data-tooltip="Browse channels">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </button>
+
+
+                    <button type="button"
+                            class="sidebar-icon-button"
+                            data-tooltip="More channel options">
+
+                        <i class="fa-solid fa-ellipsis"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Channel children -->
+
+            <div class="group-items"
+                 id="channelList">
+
+
+                <button type="button"
+                        class="it on"
+                        data-ch="nouveau-canal">
+
+                    <b>
+                        #
+                    </b>
+
+                    <span>
+                        nouveau-canal
+                    </span>
+
+                </button>
+
+
+                <button type="button"
+                        class="it"
+                        data-ch="social">
+
+                    <b>
+                        #
+                    </b>
+
+                    <span>
+                        social
+                    </span>
+
+                </button>
+
+
+                <button type="button"
+                        class="it"
+                        data-ch="tous-hagiathanh">
+
+                    <b>
+                        #
+                    </b>
+
+                    <span>
+                        tous-hagiathanh
+                    </span>
+
+                </button>
+
+
+                <button type="button"
+                        id="addChannelRow"
+                        class="it add-row"
+                        data-tooltip="Create a new channel">
+
+                    <b class="small-plus">
+                        +
+                    </b>
+
+                    <span>
+                        Add channels
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+                     DIRECT MESSAGES
+                ================================================== -->
+
+        <div class="sidebar-group">
+
+
+            <div class="channel-section-header">
+
+
+                <button type="button"
+                        class="channel-section-title"
+                        data-tooltip="Direct messages">
+
+                    <span class="channel-chevron">
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </span>
+
+
+                    <span class="section-icon">
+
+                        <i class="fa-regular fa-comments"></i>
+
+                    </span>
+
+
+                    <span>
+                        Direct messages
+                    </span>
+
+                </button>
+
+
+                <div class="channel-section-actions">
+
+
+                    <button type="button"
+                            class="sidebar-icon-button"
+                            data-tooltip="Start a direct message">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="group-items"
+                 id="directMessageList">
+
+
+                <button type="button"
+                        class="it add-row"
+                        data-tooltip="Invite people">
+
+                    <b class="small-plus">
+                        +
+                    </b>
+
+                    <span>
+                        Invite people
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+                     APPS
+                ================================================== -->
+
+        <div class="sidebar-group">
+
+
+            <div class="channel-section-header">
+
+
+                <button type="button"
+                        class="channel-section-title"
+                        data-tooltip="Apps">
+
+                    <span class="channel-chevron">
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </span>
+
+
+                    <span class="section-icon">
+
+                        <i class="fa-solid fa-circle-nodes"></i>
+
+                    </span>
+
+
+                    <span>
+                        Apps
+                    </span>
+
+                </button>
+
+
+                <div class="channel-section-actions">
+
+
+                    <button type="button"
+                            class="sidebar-icon-button"
+                            data-tooltip="Add an app">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="group-items">
+
+
+                <button type="button"
+                        class="it app-row"
+                        data-tooltip="Slack">
+
+                    <b class="app-icon">
+
+                        <i class="fa-brands fa-slack"></i>
+
+                    </b>
+
+                    <span>
+                        TaskFlow
+                    </span>
+
+                    <span class="badge">
+                        1
+                    </span>
+
+                </button>
+
+
+
+                <button type="button"
+                        class="it add-row"
+                        data-tooltip="Connect an app">
+
+                    <b class="small-plus">
+                        +
+                    </b>
+
+                    <span>
+                        Connect apps
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</aside>
+
+

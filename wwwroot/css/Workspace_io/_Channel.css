@@ -1,0 +1,133 @@
+.wel {
+    padding: 20px 30px 0
+}
+
+    .wel h1 {
+        font-size: 34px;
+        font-weight: 900;
+        line-height: 1.15;
+        letter-spacing: -.5px
+    }
+
+    .wel p {
+        font-size: 20px;
+        line-height: 1.6;
+        margin-top: 14px;
+        color: #1d1c1d;
+        max-width: 790px
+    }
+
+/* ===== 3 thẻ màu ===== */
+.cards {
+    display: flex;
+    gap: 18px;
+    padding: 30px 30px 26px
+}
+
+.card {
+    width: 228px;
+    height: 375px;
+    border-radius: 14px;
+    padding: 18px 16px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,.08)
+}
+
+    .card h3 {
+        font-size: 19px;
+        font-weight: 800
+    }
+
+    .card p {
+        font-size: 15px;
+        color: #4a4a4a;
+        margin-top: 10px;
+        line-height: 1.45;
+        width: 170px
+    }
+
+.c1 {
+    background: #fde3a7
+}
+
+.c2 {
+    background: #c4f0fc
+}
+
+.c3 {
+    background: #f8dffa
+}
+
+.c1 .il {
+    position: absolute;
+    left: 16px;
+    top: 152px;
+    right: -2px;
+    bottom: 0;
+    background: #f5b948;
+    border-radius: 8px 0 0 0;
+    padding: 34px 0 0 18px
+}
+
+    .c1 .il div {
+        background: #fff;
+        height: 78px;
+        width: 100px;
+        border-radius: 6px;
+        display: inline-block;
+        margin-right: 8px;
+        position: relative
+    }
+
+        .c1 .il div:before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #0a7b4c
+        }
+
+        .c1 .il div:after {
+            content: "";
+            position: absolute;
+            left: 44px;
+            top: 16px;
+            width: 44px;
+            height: 6px;
+            background: #ddd;
+            border-radius: 3px;
+            box-shadow: 0 14px 0 #ddd,-34px 30px 0 #ddd
+        }
+
+.c2 .il {
+    position: absolute;
+    left: 8px;
+    top: 170px;
+    width: 260px;
+    height: 150px;
+    background: #0b5c93;
+    transform: skewY(-28deg) skewX(30deg) scale(.95);
+    border-radius: 4px;
+    box-shadow: 0 12px 0 #9ad1e3
+}
+
+    .c2 .il:after {
+        content: "";
+        position: absolute;
+        inset: 14px;
+        background: #e6f6fb;
+        border-radius: 3px;
+        opacity: .9
+    }
+
+.c3 .av {
+    position: absolute;
+    width: 48px;
+    height: 60px;
+    border-radius: 8px
+}

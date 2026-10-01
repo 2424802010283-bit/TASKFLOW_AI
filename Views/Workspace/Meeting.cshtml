@@ -1,0 +1,29 @@
+﻿@{
+    // Khai báo sử dụng bộ khung Landing
+    Layout = "_LandingLayout";
+    ViewData["Title"] = "Home";
+}
+
+<!-- Lắp các mảnh ghép (Partial Views) vào đúng thứ tự từ trên xuống dưới -->
+    
+<partial name="Landing/_Hero" />       <!-- Tương ứng Hình 1 -->
+
+<partial name="Landing/_AiAgents" />   <!-- Tương ứng Hình 2 & 3 -->
+
+<partial name="Landing/_Updates" />    <!-- Tương ứng Hình 4 "What's new" -->
+
+<partial name="Landing/_Context" />    <!-- Tương ứng Hình 5 "Instant context" -->
+
+<partial name="Landing/_Collaboration" />    <!-- Tương ứng Hình 6 "Instant _ColBlaboration" -->
+
+<partial name="~/Views/Shared/Landing/_WorkManagement.cshtml" />
+
+<partial name="Landing/_PlatformSection" />
+
+<partial name="Landing/_PlatformCompanies" />
+
+<partial name="Landing/_DeepDive" />
+@* 
+<partial name="Landing/_FinalCta" /> *@
+
+

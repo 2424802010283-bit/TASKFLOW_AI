@@ -1,0 +1,704 @@
+/* =========================================================
+   TASKFLOW — PLATFORM SECTION
+   File: wwwroot/css/Landing_io/_platform.css
+========================================================= */
+.tf-platform {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #fcf9ff;
+    color: #24142e;
+    padding: 112px 0 120px
+}
+
+.platform-glow {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 50%;
+    filter: blur(12px)
+}
+
+.platform-glow-left {
+    width: 520px;
+    height: 420px;
+    left: -210px;
+    bottom: 40px;
+    background: radial-gradient(circle,rgba(164,83,221,.18),transparent 68%)
+}
+
+.platform-glow-right {
+    width: 560px;
+    height: 500px;
+    right: -250px;
+    top: 180px;
+    background: radial-gradient(circle,rgba(102,40,176,.14),transparent 70%)
+}
+
+.platform-container {
+    width: min(1320px,calc(100% - 48px));
+    margin: 0 auto
+}
+
+.platform-switcher {
+    width: max-content;
+    margin: 0 auto 31px;
+    padding: 5px;
+    border: 1px solid #ead8f0;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(69,24,92,.10);
+    display: flex;
+    gap: 2px
+}
+
+.platform-tab {
+    border: 0;
+    background: transparent;
+    color: #3e1b50;
+    border-radius: 999px;
+    padding: 11px 19px;
+    font-size: 16px;
+    font-weight: 750;
+    cursor: pointer;
+    transition: background .2s,transform .2s
+}
+
+    .platform-tab:hover {
+        background: #f7ebfb
+    }
+
+    .platform-tab.is-active {
+        background: #f1def9
+    }
+
+    .platform-tab:active {
+        transform: scale(.97)
+    }
+
+.platform-heading {
+    text-align: center;
+    max-width: 920px;
+    margin: 0 auto 80px
+}
+
+    .platform-heading h2 {
+        margin: 0;
+        font-size: clamp(44px,5.2vw,70px);
+        line-height: 1.02;
+        letter-spacing: -3px;
+        font-weight: 850;
+        color: #23122c
+    }
+
+        .platform-heading h2 span {
+            background: linear-gradient(90deg,#5b177d,#9d16cb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
+        }
+
+    .platform-heading p {
+        max-width: 700px;
+        margin: 22px auto 0;
+        color: #514a54;
+        font-size: 19px;
+        line-height: 1.48
+    }
+
+.platform-content {
+    display: grid;
+    grid-template-columns: 360px minmax(0,1fr);
+    gap: 70px;
+    align-items: center
+}
+
+.platform-story {
+    display: flex;
+    flex-direction: column;
+    gap: 30px
+}
+
+.platform-story-item {
+    width: 100%;
+    display: flex;
+    text-align: left;
+    border: 0;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    color: #2e1937
+}
+
+.platform-story-line {
+    width: 4px;
+    min-width: 4px;
+    border-radius: 8px;
+    background: #eee5f1;
+    margin-right: 20px;
+    transition: .25s
+}
+
+.platform-story-copy {
+    display: flex;
+    flex-direction: column;
+    padding: 2px 0
+}
+
+    .platform-story-copy strong {
+        font-size: 22px;
+        line-height: 1.28;
+        font-weight: 800
+    }
+
+    .platform-story-copy small {
+        display: none;
+        max-width: 320px;
+        margin-top: 10px;
+        color: #514a54;
+        font-size: 16px;
+        line-height: 1.48
+    }
+
+.platform-story-item.is-active .platform-story-line {
+    background: #7614a4
+}
+
+.platform-story-item.is-active .platform-story-copy strong {
+    color: #7614a4
+}
+
+.platform-story-item.is-active .platform-story-copy small {
+    display: block
+}
+
+.platform-link {
+    display: none;
+    margin-top: 12px;
+    color: #52758d;
+    font-size: 15px;
+    font-weight: 750
+}
+
+.platform-story-item.is-active .platform-link {
+    display: inline-block
+}
+
+.platform-link b {
+    font-size: 18px;
+    margin-left: 4px
+}
+
+.platform-quote {
+    margin-top: 72px;
+    max-width: 310px;
+    padding-left: 3px
+}
+
+.platform-quote-mark {
+    display: block;
+    font-size: 28px;
+    color: #7b1aa7;
+    margin-bottom: 8px
+}
+
+.platform-quote p {
+    margin: 0 0 13px;
+    font-size: 16px;
+    line-height: 1.45;
+    color: #4f4853;
+    font-style: italic
+}
+
+.platform-quote strong {
+    font-size: 14px
+}
+
+.platform-product {
+    min-width: 0
+}
+
+.platform-window {
+    border: 4px solid #641077;
+    border-radius: 18px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 28px 70px rgba(65,18,81,.16);
+    transition: transform .3s,box-shadow .3s
+}
+
+    .platform-window:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 34px 82px rgba(65,18,81,.20)
+    }
+
+.platform-window-bar {
+    height: 43px;
+    background: #641077;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    position: relative
+}
+
+.platform-dots {
+    display: flex;
+    gap: 7px
+}
+
+    .platform-dots i {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #f5a263
+    }
+
+        .platform-dots i:nth-child(2) {
+            background: #efc24c
+        }
+
+        .platform-dots i:nth-child(3) {
+            background: #5bc674
+        }
+
+.platform-window-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    font-weight: 700;
+    opacity: .95
+}
+
+.platform-window-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 14px;
+    opacity: .75
+}
+
+.platform-app-shell {
+    display: flex;
+    min-height: 580px;
+    background: #faf8fc
+}
+
+.platform-mini-nav {
+    width: 72px;
+    flex: none;
+    background: #4b0b63;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 8px;
+    gap: 8px
+}
+
+.platform-brand-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: linear-gradient(135deg,#36c5f0,#2eb67d,#ecb22e,#e01e5a);
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    margin-bottom: 10px
+}
+
+.platform-mini-nav button {
+    width: 52px;
+    height: 51px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #eadff0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    font-size: 17px;
+    cursor: pointer
+}
+
+    .platform-mini-nav button small {
+        font-size: 8px
+    }
+
+    .platform-mini-nav button:hover, .platform-mini-nav button.active {
+        background: rgba(255,255,255,.14);
+        color: #fff
+    }
+
+.platform-mini-nav span {
+    flex: 1
+}
+
+.platform-main-panel {
+    min-width: 0;
+    flex: 1;
+    background: #fff
+}
+
+.platform-topbar {
+    height: 58px;
+    border-bottom: 1px solid #eee6f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 19px;
+    gap: 15px
+}
+
+.platform-search {
+    height: 32px;
+    width: min(420px,50%);
+    border: 1px solid #e2dce4;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 11px;
+    color: #777;
+    font-size: 12px
+}
+
+.platform-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #8b858d;
+    font-size: 10px
+}
+
+    .platform-user-actions button {
+        border: 0;
+        background: #f5f1f6;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px
+    }
+
+.platform-avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #6b42a0;
+    color: #fff;
+    font-weight: 800
+}
+
+.platform-page-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 27px 28px 19px;
+    gap: 18px
+}
+
+    .platform-page-head h3 {
+        margin: 0;
+        font-size: 24px;
+        letter-spacing: -.5px
+    }
+
+    .platform-page-head p {
+        margin: 7px 0 0;
+        color: #777;
+        font-size: 12px
+    }
+
+.platform-outline-button {
+    border: 1px solid #d8c9dc;
+    background: #fff;
+    border-radius: 7px;
+    padding: 9px 13px;
+    color: #552065;
+    font-weight: 750;
+    font-size: 11px;
+    white-space: nowrap
+}
+
+.platform-filter-row {
+    display: flex;
+    gap: 9px;
+    padding: 0 28px 18px
+}
+
+.platform-filter-search {
+    flex: 1;
+    border: 1px solid #e0dbe1;
+    border-radius: 7px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 10px;
+    color: #8b858b;
+    font-size: 11px
+}
+
+.platform-filter-row > button {
+    border: 1px solid #e0dbe1;
+    background: #fff;
+    border-radius: 7px;
+    padding: 0 12px;
+    font-size: 11px;
+    color: #514a54
+}
+
+.platform-app-grid {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 10px;
+    padding: 0 28px 28px;
+    background: linear-gradient(180deg,#fff,#fbf7fd)
+}
+
+.platform-app-card {
+    min-height: 94px;
+    border: 1px solid #e8e1ea;
+    border-radius: 9px;
+    background: #fff;
+    padding: 13px;
+    display: grid;
+    grid-template-columns: 36px minmax(0,1fr);
+    column-gap: 10px;
+    align-items: center;
+    position: relative;
+    transition: transform .2s,box-shadow .2s,border-color .2s
+}
+
+    .platform-app-card:hover {
+        transform: translateY(-2px);
+        border-color: #d7bde0;
+        box-shadow: 0 8px 20px rgba(73,27,91,.08)
+    }
+
+    .platform-app-card.featured {
+        border-color: #cda8dc;
+        box-shadow: inset 0 0 0 1px rgba(122,24,167,.04)
+    }
+
+    .platform-app-card h4 {
+        margin: 0;
+        font-size: 13px
+    }
+
+    .platform-app-card p {
+        margin: 4px 0 0;
+        color: #8a858b;
+        font-size: 9px
+    }
+
+    .platform-app-card button, .platform-app-card .connected {
+        grid-column: 2;
+        margin-top: 7px;
+        justify-self: start;
+        font-size: 8px;
+        border-radius: 999px;
+        padding: 4px 8px
+    }
+
+    .platform-app-card button {
+        border: 1px solid #ddd3e0;
+        background: #fff;
+        color: #5e246d;
+        font-weight: 750
+    }
+
+    .platform-app-card .connected {
+        background: #e9f7f1;
+        color: #167256;
+        font-weight: 750
+    }
+
+.platform-app-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+    display: grid;
+    place-items: center;
+    font-size: 17px;
+    font-weight: 900;
+    grid-row: 1 / span 2;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.06)
+}
+
+.icon-drive {
+    background: #e7f0ff;
+    color: #3c7bd6
+}
+
+.icon-meet {
+    background: #e7f8ed;
+    color: #2e9d5e
+}
+
+.icon-github {
+    background: #f0edf3;
+    color: #252029
+}
+
+.icon-notion {
+    background: #f4f4f4;
+    color: #171317
+}
+
+.icon-calendar {
+    background: #fff0f0;
+    color: #df5353;
+    font-size: 12px
+}
+
+.icon-mail {
+    background: #fff5dd;
+    color: #d28a1a
+}
+
+.icon-jira {
+    background: #e7efff;
+    color: #326ed3
+}
+
+.icon-zapier {
+    background: #fff0e7;
+    color: #e56d24
+}
+
+.icon-flowbot {
+    background: linear-gradient(135deg,#efe1fa,#d9f3ef);
+    color: #7316a0
+}
+
+.flowbot-card {
+    background: linear-gradient(135deg,#fff,#faf4fd)
+}
+
+.platform-bottom-note {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding: 0 4px;
+    color: #625968;
+    font-size: 14px
+}
+
+    .platform-bottom-note a {
+        color: #5a3c6b;
+        text-decoration: none;
+        font-weight: 750
+    }
+
+        .platform-bottom-note a:hover {
+            text-decoration: underline
+        }
+
+    .platform-bottom-note b {
+        font-size: 17px;
+        margin-left: 4px
+    }
+
+.platform-story-item:focus-visible, .platform-tab:focus-visible, .platform-outline-button:focus-visible, .platform-app-card button:focus-visible {
+    outline: 3px solid rgba(122,24,167,.25);
+    outline-offset: 2px
+}
+
+@media(max-width:1100px) {
+    .platform-content {
+        grid-template-columns: 1fr;
+        gap: 45px
+    }
+
+    .platform-story {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px
+    }
+
+    .platform-quote {
+        grid-column: 1/-1;
+        margin-top: 10px;
+        max-width: 520px
+    }
+
+    .platform-app-shell {
+        min-height: 540px
+    }
+}
+
+@media(max-width:850px) {
+    .platform-app-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr))
+    }
+
+    .platform-mini-nav {
+        width: 62px
+    }
+
+    .platform-page-head {
+        align-items: flex-start;
+        flex-direction: column
+    }
+
+    .platform-search {
+        width: 55%
+    }
+}
+
+@media(max-width:680px) {
+    .tf-platform {
+        padding: 76px 0 90px
+    }
+
+    .platform-container {
+        width: min(100% - 28px,1320px)
+    }
+
+    .platform-switcher {
+        max-width: 100%;
+        overflow: auto
+    }
+
+    .platform-tab {
+        padding: 9px 12px;
+        font-size: 13px;
+        white-space: nowrap
+    }
+
+    .platform-heading {
+        margin-bottom: 55px
+    }
+
+        .platform-heading h2 {
+            font-size: 40px;
+            letter-spacing: -1.8px
+        }
+
+        .platform-heading p {
+            font-size: 17px
+        }
+
+    .platform-story {
+        display: flex
+    }
+
+    .platform-app-shell {
+        min-width: 850px
+    }
+
+    .platform-window {
+        overflow-x: auto
+    }
+
+    .platform-bottom-note {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px
+    }
+}

@@ -1,0 +1,1198 @@
+/* style.css */
+:root {
+    --bg: #103667;
+    --side: #1B4F93;
+    --side-dark: #103667;
+    --side-hover: rgba(255,255,255,.10);
+    --side-active: #426EB4;
+    --panel: #fff;
+    --text: #1d1c1d;
+    --muted: #616061;
+    --line: #e0e0e0;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top,0px);
+    padding-bottom: env(safe-area-inset-bottom,0px);
+}
+
+@media (prefers-color-scheme:dark) {
+    :root:not([data-theme="light"]) {
+        --panel: #fff
+    }
+}
+
+:root[data-theme="dark"] {
+    --panel: #fff
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html, body {
+    height: 100%;
+    background: var(--bg);
+    font-family: "Lato","Segoe UI",Helvetica,Arial,sans-serif;
+    color: var(--text);
+    overflow: hidden;
+}
+
+.app {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 125vw;
+    height: 125vh;
+    transform: scale(0.8);
+    transform-origin: top left;
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    color: #fff;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 14px
+}
+
+    .top .nav {
+        width: 250px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 18px;
+        font-size: 20px;
+        opacity: .85
+    }
+
+    .top .search {
+        flex: 1;
+        height: 34px;
+        border-radius: 8px;
+        background: rgba(255,255,255,.22);
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        font-size: 15px;
+        gap: 12px
+    }
+
+    .top .ai {
+        width: 32px;
+        height: 32px;
+        border-radius: 9px;
+        background: #fff;
+        display: grid;
+        place-items: center;
+        font-size: 18px
+    }
+
+    .top .help {
+        width: 34px;
+        text-align: center;
+        font-size: 22px
+    }
+
+.body {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    gap: 5px;
+    padding-right: 5px;
+    overflow: hidden;
+}
+
+/* ===== Cột icon bên trái ===== */
+.rail {
+    width: 88px;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 700
+}
+
+.ws {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    background: #bbb;
+    color: #333;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 14px
+}
+
+.ri {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 6px 0;
+    width: 80px;
+    text-align: center;
+    line-height: 1.05;
+    cursor: pointer
+}
+
+    .ri i {
+        font-style: normal;
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        font-size: 23px
+    }
+
+    .ri.on i {
+        background: rgba(255,255,255,.28)
+    }
+
+    .ri:hover i {
+        background: rgba(255,255,255,.15)
+    }
+
+.rail .sp {
+    flex: 1
+}
+
+.circ {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.22);
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    margin-bottom: 14px
+}
+
+.me {
+    width: 46px;
+    height: 46px;
+    border-radius: 9px;
+    background: #fff;
+    display: grid;
+    place-items: center;
+    margin-bottom: 8px;
+    font-size: 30px;
+    color: #1fb5b0
+}
+
+/* ===== Sidebar ===== */
+.side {
+    width: 378px;
+    flex: none;
+    background: var(--side);
+    border-radius: 10px 0 0 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    font-size: 18px
+}
+
+    .side::-webkit-scrollbar {
+        display: none
+    }
+
+.sh {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px 0 20px;
+    height: 62px;
+    font-size: 23px;
+    font-weight: 900;
+    position: sticky;
+    top: 0;
+    background: var(--side);
+    z-index: 2
+}
+
+    .sh span {
+        font-size: 22px;
+        font-weight: 400;
+        display: flex;
+        gap: 16px
+    }
+
+.promo {
+    background: linear-gradient(#7c3a86,#6a2b74);
+    padding: 22px 20px 20px;
+    position: relative;
+    margin-bottom: 10px
+}
+
+    .promo h4 {
+        font-size: 18px;
+        line-height: 1.3;
+        font-weight: 800;
+        width: 290px
+    }
+
+    .promo small {
+        display: block;
+        margin: 6px 0 18px;
+        font-size: 15px;
+        opacity: .85
+    }
+
+    .promo .x {
+        position: absolute;
+        right: 18px;
+        top: 16px;
+        cursor: pointer;
+        font-size: 18px
+    }
+
+    .promo .gift {
+        position: absolute;
+        right: 34px;
+        top: 26px;
+        font-size: 56px
+    }
+
+    .promo button {
+        width: 100%;
+        height: 45px;
+        border: 0;
+        border-radius: 6px;
+        background: #f5eaf7;
+        color: #4a154b;
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer
+    }
+
+.find {
+    margin: 0 10px 12px;
+    height: 35px;
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 15px;
+    gap: 8px
+}
+
+.sec {
+    padding: 0 10px
+}
+
+.it {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 10px;
+    height: 35px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #dfcfe0;
+    white-space: nowrap
+}
+
+    .it:hover {
+        background: rgba(255,255,255,.1)
+    }
+
+    .it b {
+        width: 22px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 20px
+    }
+
+    .it.on {
+        background: #f8f0f9;
+        color: #4a154b;
+        font-weight: 600
+    }
+
+    .it.hd {
+        color: #e8dcea
+    }
+
+.hint {
+    padding: 6px 20px 14px 28px;
+    font-size: 15px;
+    color: #dfcfe0;
+    font-weight: 600
+}
+
+.hr {
+    height: 1px;
+    background: rgba(255,255,255,.2);
+    margin: 10px 10px 12px
+}
+
+.badge {
+    margin-left: auto;
+    background: #d9c2dc;
+    color: #3f0e40;
+    border-radius: 11px;
+    font-size: 13px;
+    font-weight: 800;
+    min-width: 32px;
+    text-align: center;
+    padding: 2px 0
+}
+
+/* ===== Khung kênh chính ===== */
+.main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--panel);
+    color: var(--text);
+    border-radius: 0;
+    overflow: hidden
+}
+
+.ch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px 0 28px;
+    height: 62px;
+    flex: none
+}
+
+    .ch h2 {
+        font-size: 22px;
+        font-weight: 800;
+        color: #3b3a3b;
+        display: flex;
+        gap: 14px;
+        align-items: center
+    }
+
+    .ch .r {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        font-size: 20px;
+        color: #3b3a3b
+    }
+
+        .ch .r .inv {
+            font-size: 16px;
+            font-weight: 600;
+            color: #3b3a3b
+        }
+
+.tabs {
+    display: flex;
+    gap: 26px;
+    padding: 0 28px;
+    height: 47px;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    font-size: 16px;
+    font-weight: 600;
+    flex: none
+}
+
+    .tabs .a {
+        border-bottom: 3px solid #4a154b;
+        height: 47px;
+        display: flex;
+        align-items: center;
+        gap: 8px
+    }
+
+    .tabs .t {
+        color: #3b3a3b;
+        font-weight: 600;
+        display: flex;
+        gap: 8px;
+        align-items: center
+    }
+
+.scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 0 10px
+}
+
+.wel {
+    padding: 20px 30px 0
+}
+
+    .wel h1 {
+        font-size: 34px;
+        font-weight: 900;
+        line-height: 1.15;
+        letter-spacing: -.5px
+    }
+
+    .wel p {
+        font-size: 20px;
+        line-height: 1.6;
+        margin-top: 14px;
+        color: #1d1c1d;
+        max-width: 790px
+    }
+
+/* ===== 3 thẻ màu ===== */
+.cards {
+    display: flex;
+    gap: 18px;
+    padding: 30px 30px 26px
+}
+
+.card {
+    width: 228px;
+    height: 375px;
+    border-radius: 14px;
+    padding: 18px 16px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,.08)
+}
+
+    .card h3 {
+        font-size: 19px;
+        font-weight: 800
+    }
+
+    .card p {
+        font-size: 15px;
+        color: #4a4a4a;
+        margin-top: 10px;
+        line-height: 1.45;
+        width: 170px
+    }
+
+.c1 {
+    background: #fde3a7
+}
+
+.c2 {
+    background: #c4f0fc
+}
+
+.c3 {
+    background: #f8dffa
+}
+
+.c1 .il {
+    position: absolute;
+    left: 16px;
+    top: 152px;
+    right: -2px;
+    bottom: 0;
+    background: #f5b948;
+    border-radius: 8px 0 0 0;
+    padding: 34px 0 0 18px
+}
+
+    .c1 .il div {
+        background: #fff;
+        height: 78px;
+        width: 100px;
+        border-radius: 6px;
+        display: inline-block;
+        margin-right: 8px;
+        position: relative
+    }
+
+        .c1 .il div:before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #0a7b4c
+        }
+
+        .c1 .il div:after {
+            content: "";
+            position: absolute;
+            left: 44px;
+            top: 16px;
+            width: 44px;
+            height: 6px;
+            background: #ddd;
+            border-radius: 3px;
+            box-shadow: 0 14px 0 #ddd,-34px 30px 0 #ddd
+        }
+
+.c2 .il {
+    position: absolute;
+    left: 8px;
+    top: 170px;
+    width: 260px;
+    height: 150px;
+    background: #0b5c93;
+    transform: skewY(-28deg) skewX(30deg) scale(.95);
+    border-radius: 4px;
+    box-shadow: 0 12px 0 #9ad1e3
+}
+
+    .c2 .il:after {
+        content: "";
+        position: absolute;
+        inset: 14px;
+        background: #e6f6fb;
+        border-radius: 3px;
+        opacity: .9
+    }
+
+.c3 .av {
+    position: absolute;
+    width: 48px;
+    height: 60px;
+    border-radius: 8px
+}
+
+/* ===== Ngày + tin nhắn ===== */
+.date {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid var(--line);
+    position: relative;
+    height: 0
+}
+
+    .date span {
+        position: absolute;
+        top: -19px;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        padding: 8px 20px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer
+    }
+
+.msgs {
+    padding: 40px 24px 8px
+}
+
+.msg {
+    display: flex;
+    gap: 10px;
+    padding: 8px 4px
+}
+
+.av2 {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: #e8f5fa;
+    display: grid;
+    place-items: center;
+    flex: none;
+    overflow: hidden
+}
+
+    .av2:before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #1fb5b0;
+        margin-top: -6px
+    }
+
+    .av2:after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 16px;
+        border-radius: 15px 15px 0 0;
+        background: #1fb5b0;
+        margin: -2px 0 -20px -16px;
+        position: relative;
+        left: 8px;
+        top: 14px
+    }
+
+.msg .n {
+    font-weight: 900;
+    font-size: 17px
+}
+
+    .msg .n small {
+        font-weight: 400;
+        color: #616061;
+        font-size: 14px;
+        margin-left: 6px
+    }
+
+.msg .tx {
+    font-size: 17.5px;
+    line-height: 1.4;
+    color: #3b3a3b;
+    margin-top: 2px
+}
+
+/* ===== Khung soạn tin ===== */
+.comp {
+    margin: 0 24px 22px;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    background: #fff;
+    flex: none
+}
+
+    .comp .tb {
+        display: flex;
+        gap: 22px;
+        padding: 12px 16px;
+        background: #f8f8f8;
+        border-radius: 10px 10px 0 0;
+        color: #8b8a8b;
+        font-size: 19px
+    }
+
+    .comp .in {
+        padding: 14px 16px 10px;
+        font-size: 18px;
+        min-height: 52px;
+        outline: 0;
+        color: #1d1c1d;
+        overflow-wrap: anywhere;
+        max-height: 130px;
+        overflow: auto
+    }
+
+        .comp .in:empty:before {
+            content: attr(data-ph);
+            color: #616061
+        }
+
+    .comp .bt {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 6px 14px 10px;
+        color: #3b3a3b;
+        font-size: 21px
+    }
+
+        .comp .bt .pl {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            display: grid;
+            place-items: center;
+            font-size: 26px
+        }
+
+        .comp .bt .snd {
+            margin-left: auto;
+            color: #aaa;
+            cursor: pointer;
+            display: flex;
+            gap: 10px;
+            align-items: center
+        }
+
+/* ===== Panel Slackbot ===== */
+.bot {
+    width: 541px;
+    flex: none;
+    background: #fff;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden
+}
+
+    .bot .hd {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 22px 0 26px;
+        height: 62px;
+        flex: none
+    }
+
+        .bot .hd h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 23px;
+            font-weight: 900
+        }
+
+.logo {
+    width: 32px;
+    height: 32px;
+    position: relative
+}
+
+    .logo i {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-radius: 5px
+    }
+
+.bot .hd .r {
+    display: flex;
+    gap: 28px;
+    font-size: 22px;
+    color: #3b3a3b
+}
+
+.bot .tabs {
+    padding: 0 26px
+}
+
+.bot .sc {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 24px 0;
+    position: relative
+}
+
+.up {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(#e4f5f2,#d5eef0);
+    border-radius: 12px;
+    padding: 24px 26px 22px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.2);
+    z-index: 2
+}
+
+    .up h3 {
+        font-size: 23px;
+        line-height: 1.28;
+        font-weight: 900;
+        width: 400px
+    }
+
+    .up p {
+        font-size: 18.5px;
+        line-height: 1.5;
+        margin-top: 12px;
+        width: 380px;
+        color: #333
+    }
+
+    .up .x {
+        position: absolute;
+        right: 26px;
+        top: 22px;
+        width: 20px;
+        height: 2px;
+        background: #333;
+        cursor: pointer
+    }
+
+    .up .row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 20px
+    }
+
+    .up button {
+        background: #13684f;
+        color: #fff;
+        border: 0;
+        border-radius: 6px;
+        height: 36px;
+        padding: 0 16px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer
+    }
+
+    .up a {
+        color: #1264a3;
+        font-size: 16px;
+        cursor: pointer
+    }
+
+    .up.min {
+        padding: 10px 26px;
+        height: auto
+    }
+
+        .up.min h3 {
+            font-size: 17px
+        }
+
+        .up.min p, .up.min .row {
+            display: none
+        }
+
+.btxt {
+    font-size: 23px;
+    line-height: 1.45;
+    color: #1d1c1d;
+    padding-left: 74px;
+    margin-top: -58px
+}
+
+    .btxt p {
+        margin-bottom: 24px
+    }
+
+    .btxt a {
+        color: #1264a3
+    }
+
+    .btxt p:first-child {
+        font-size: 21px;
+        margin-bottom: 34px;
+        text-align: left;
+        padding-top: 50px
+    }
+
+.bot .comp {
+    margin: 14px 24px 22px
+}
+
+/* ===== Tiện ích + responsive ===== */
+.hide {
+    display: none !important
+}
+
+@media (max-width:1100px) {
+    .bot {
+        display: none
+    }
+
+    .side {
+        width: 260px
+    }
+}
+
+@media (max-width:700px) {
+    .side, .rail {
+        display: none
+    }
+
+    .card {
+        width: 190px
+    }
+}
+
+.channel-icon {
+    width: 14px;
+    height: 24px;
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================================================
+   SIDEBAR SECTION HEADER
+========================================================= */
+/* =========================================================
+   TASKFLOW BLUE SIDEBAR
+   CHANNELS / DMS / APPS
+========================================================= */
+
+/* ---------- SIDEBAR ROOT ---------- */
+
+.side {
+    background: var(--side) !important;
+    color: #fff !important;
+}
+
+
+/* ---------- SECTION ---------- */
+
+.sidebar-group {
+    width: 100%;
+    margin-top: 10px;
+    background: transparent !important;
+}
+
+
+/* ---------- SECTION HEADER ---------- */
+
+.channel-section-header {
+    width: 100%;
+    min-height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px 0 12px;
+    background: transparent !important;
+}
+
+
+/* ---------- SECTION TITLE ---------- */
+
+.channel-section-title {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0;
+    border: 0;
+    background: transparent !important;
+    color: rgba(255,255,255,.92);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: left;
+}
+
+
+/* ---------- CHEVRON ---------- */
+
+.channel-chevron {
+    width: 12px;
+    height: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,.75);
+    font-size: 8px;
+}
+
+
+/* ---------- SECTION ICON ---------- */
+
+.section-icon {
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,.88);
+    font-size: 13px;
+    flex: 0 0 18px;
+}
+
+
+/* ---------- ACTION BUTTONS ---------- */
+
+.channel-section-actions {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background: transparent !important;
+}
+
+
+.sidebar-icon-button {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    border-radius: 5px;
+    background: transparent !important;
+    color: rgba(255,255,255,.82);
+    cursor: pointer;
+    font-size: 12px;
+}
+
+
+    .sidebar-icon-button:hover {
+        background: var(--side-hover) !important;
+        color: #fff;
+    }
+
+
+/* =========================================================
+   CHILD CONTAINER
+========================================================= */
+
+.group-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: transparent !important;
+}
+
+
+    /* =========================================================
+   CHILD ITEM
+========================================================= */
+
+    .group-items .it {
+        width: 100%;
+        min-height: 36px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 10px 0 38px !important;
+        border: 0;
+        border-radius: 6px;
+        background: transparent !important;
+        color: rgba(255,255,255,.88);
+        font: inherit;
+        font-size: 17px;
+        font-weight: 400;
+        cursor: pointer;
+        text-align: left;
+        box-shadow: none !important;
+    }
+
+
+        /* hover */
+
+        .group-items .it:hover {
+            background: var(--side-hover) !important;
+            color: #fff !important;
+        }
+
+
+        /* =========================================================
+   ACTIVE CHANNEL
+========================================================= */
+
+        .group-items .it.on {
+            background: var(--side-active) !important;
+            color: #fff !important;
+            font-weight: 700;
+            box-shadow: none !important;
+        }
+
+
+        /* =========================================================
+   HASHTAG
+========================================================= */
+
+        .group-items .it > b {
+            width: 18px;
+            flex: 0 0 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent !important;
+            color: inherit;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+
+    /* =========================================================
+   ADD CHANNEL / INVITE / CONNECT
+========================================================= */
+
+    .group-items .add-row {
+        color: rgba(255,255,255,.74) !important;
+        background: transparent !important;
+    }
+
+
+        .group-items .add-row:hover {
+            color: #fff !important;
+            background: var(--side-hover) !important;
+        }
+
+
+/* ---------- PLUS ---------- */
+
+.small-plus {
+    width: 21px !important;
+    height: 21px !important;
+    flex: 0 0 21px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: rgba(255,255,255,.13) !important;
+    color: #fff !important;
+    font-size: 15px !important;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   APPS
+========================================================= */
+
+.group-items .app-row {
+    color: #fff !important;
+    font-weight: 700 !important;
+    background: transparent !important;
+}
+
+
+    .group-items .app-row:hover {
+        background: var(--side-hover) !important;
+    }
+
+
+/* app icon */
+
+.app-icon {
+    width: 21px !important;
+    height: 21px !important;
+    flex: 0 0 21px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent !important;
+    color: #fff !important;
+    font-size: 15px !important;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.group-items .badge {
+    margin-left: auto;
+    min-width: 21px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.85) !important;
+    color: #1B4F93 !important;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   PREVENT WHITE BLOCK
+========================================================= */
+
+.sec,
+.sidebar-group,
+.group-items,
+.channel-section-header,
+.channel-section-actions {
+    background-color: transparent !important;
+}
+
+
+/* =========================================================
+   KEEP SIDEBAR BLUE EVEN WITH OTHER CSS
+========================================================= */
+
+.side,
+.side * {
+    --sidebar-transparent: transparent;
+}

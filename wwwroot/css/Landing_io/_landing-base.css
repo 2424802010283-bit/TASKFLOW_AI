@@ -1,0 +1,278 @@
+/*:root {
+    --bg: #FBFAFE;
+    --surface: #FFFFFF;
+    --surface-2: #F4F2FC;
+    --border: #E7E3F5;
+    --text: #17143A;
+    --text-muted: #5B5678;
+    --text-faint: #8B85A8;
+    --indigo-900: #241C63;
+    --indigo-700: #3B2E93;
+    --indigo-600: #4C3FC0;
+    --indigo-500: #6D5AE0;
+    --violet-600: #6D28D9;
+    --lavender-100: #EEEAFB;
+    --lavender-200: #E3DCF7;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --radius-full: 999px;
+    --shadow-sm: 0 1px 2px rgba(23,20,58,0.06);
+    --shadow-md: 0 8px 24px rgba(23,20,58,0.08);
+    --shadow-lg: 0 24px 64px rgba(76,63,192,0.20);
+    --font-display: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}*/
+:root {
+    --bg: #FBFAFE;
+    --surface: #FFFFFF;
+    --surface-2: #F4F2FC;
+    --border: #E7E3F5;
+    --text: #17143A;
+    --text-muted: #5B5678;
+    --text-faint: #8B85A8;
+    --indigo-900: #241C63;
+    --indigo-700: #3B2E93;
+    --indigo-600: #4C3FC0;
+    --indigo-500: #6D5AE0;
+    --violet-600: #6D28D9;
+    --lavender-100: #EEEAFB;
+    --lavender-200: #E3DCF7;
+    /* MÀU CHỦ ĐẠO TASKFLOW */
+    --taskflow-purple: #6840CE;
+    --taskflow-purple-light: #7551D5;
+    --taskflow-purple-dark: #6631C7;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --radius-full: 999px;
+    --shadow-sm: 0 1px 2px rgba(23,20,58,0.06);
+    --shadow-md: 0 8px 24px rgba(23,20,58,0.08);
+    --shadow-lg: 0 24px 64px rgba(76,63,192,0.20);
+    --font-display: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Typography */
+.display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: #111;
+}
+
+.body-large {
+    font-size: 18px;
+    color: var(--text-muted);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 11px 22px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: linear-gradient( 100deg, var(--taskflow-purple-light) 0%, var(--taskflow-purple) 48%, var(--taskflow-purple-dark) 100% );
+    color: #fff;
+    border: none;
+    box-shadow: 0 9px 24px rgba(104, 60, 206, 0.20);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 1.5px solid var(--border);
+}
+
+.btn-pill {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    padding: 10px 20px;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+    .btn-pill.filled {
+        background: linear-gradient( 100deg, var(--taskflow-purple-light) 0%, var(--taskflow-purple) 48%, var(--taskflow-purple-dark) 100% );
+        color: #fff;
+        border-color: var(--taskflow-purple);
+        box-shadow: 0 6px 18px rgba(104, 60, 206, 0.18);
+    }
+
+
+/* =========================================================
+   TASKFLOW LANDING
+   CONTINUOUS PAGE BACKGROUND
+   ========================================================= */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Toàn bộ landing là một khối liên tục */
+.landing-page,
+.landing-main,
+main {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* Các section không được tự tạo khoảng trắng giữa nhau */
+section {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+    /* Không để border tạo đường kẻ giữa các section */
+    section + section {
+        border-top: 0;
+    }
+
+/* =========================================================
+   SECTION TRANSITION
+   ========================================================= */
+
+/*
+   Những section sáng nên dùng cùng một nền.
+   Khi hai section sáng nằm cạnh nhau,
+   mắt sẽ không thấy đường cắt.
+*/
+
+.platform-companies,
+.tf-work-management,
+.context-section,
+.updates-section {
+    margin: 0;
+    border: 0;
+}
+
+/* =========================================================
+   FIX 1px / vài px GAP
+   ========================================================= */
+
+.platform-companies,
+.tf-work-management,
+.context-section,
+.updates-section,
+.ai-showcase,
+.tf-collaboration {
+    display: flow-root;
+}
+
+    /* Tránh margin của phần tử con làm đẩy section */
+    .platform-companies > :first-child,
+    .tf-work-management > :first-child,
+    .context-section > :first-child,
+    .updates-section > :first-child {
+        margin-top: 0;
+    }
+
+    .platform-companies > :last-child,
+    .tf-work-management > :last-child,
+    .context-section > :last-child,
+    .updates-section > :last-child {
+        margin-bottom: 0;
+    }
+
+/* =========================================================
+   REMOVE DEFAULT IMAGE / INLINE GAP
+   ========================================================= */
+
+img {
+    display: block;
+}
+
+/* =========================================================
+   CONTINUOUS BACKGROUND
+   ========================================================= */
+
+/*
+   Các section màu trắng sáng phải kết thúc đúng tại
+   section tiếp theo.
+*/
+
+.platform-companies {
+    background-color: #ffffff;
+}
+
+.tf-work-management {
+    background-color: #ffffff;
+}
+
+/*
+   Nếu Context / Updates cũng là nền sáng,
+   dùng cùng màu để không bị cảm giác tách trang.
+*/
+
+.context-section {
+    background-color: #ffffff;
+}
+
+.updates-section {
+    background-color: #ffffff;
+}
+
+    /* =========================================================
+   IMPORTANT:
+   Không để pseudo-element tạo một đường trắng riêng
+   ở giữa hai section.
+   ========================================================= */
+
+    .platform-companies::before,
+    .platform-companies::after,
+    .tf-work-management::before,
+    .tf-work-management::after,
+    .context-section::before,
+    .context-section::after,
+    .updates-section::before,
+    .updates-section::after {
+        box-sizing: border-box;
+    }

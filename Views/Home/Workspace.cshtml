@@ -1,0 +1,1666 @@
+﻿@model TASKFLOW_AI.Models._1_Workspace.WorkspacePageViewModel
+@{
+    ViewData["Title"] = "TaskFlow Workspace";
+    Layout = null;
+
+    var currentName = string.IsNullOrWhiteSpace(Model.CurrentUserName)
+        ? "User"
+        : Model.CurrentUserName.Trim();
+
+    var currentInitials = currentName
+        .Substring(0, Math.Min(2, currentName.Length))
+        .ToUpper();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>
+        @Model.WorkspaceName (channel) - TaskFlow
+    </title>
+
+    <link rel="stylesheet"
+          href="~/css/workspace.css">
+
+    <link rel="stylesheet"
+          href="~/css/Workspace_io/Channel-create.css"
+          asp-append-version="true">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+          integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- =========================================================
+         TOP BAR
+    ========================================================== -->
+
+        <div class="top">
+
+            <div class="nav">
+                <span>←</span>
+                <span style="opacity:.5">→</span>
+                <span>◷</span>
+            </div>
+
+            <div class="search">
+                <span>⌕</span>
+                Search in @Model.WorkspaceName
+            </div>
+
+            <div class="ai">
+                ✦
+            </div>
+
+            <div class="help">
+                ?
+            </div>
+
+        </div>
+
+
+        <!-- =========================================================
+         BODY
+    ========================================================== -->
+    
+        <div class="body">
+
+
+            <!-- =====================================================
+             LEFT RAIL
+        ====================================================== -->
+
+            <nav class="rail">
+
+                <div class="ws">
+                    H
+                </div>
+
+
+                <div class="ri on"
+                     data-tooltip="Home">
+
+                    <i class="fa-solid fa-house"></i>
+                    Home
+
+                </div>
+
+
+                <div class="ri"
+                     data-tooltip="Direct messages">
+
+                    <i class="fa-regular fa-comments"></i>
+                    Direct Messages
+
+                </div>
+
+
+                <div class="ri"
+                     data-tooltip="Activity">
+
+                    <i class="fa-regular fa-bell"></i>
+                    Activity
+
+                </div>
+
+
+                <div class="ri"
+                     data-tooltip="Files">
+
+                    <i class="fa-regular fa-file"></i>
+                    Files
+
+                </div>
+
+
+                <div class="ri"
+                     data-tooltip="More">
+
+                    <i>•••</i>
+                    More
+
+                </div>
+
+
+                <div style="width:32px;
+                    height:1px;
+                    background:rgba(255,255,255,.3);
+                    margin:8px 0">
+                </div>
+
+
+                <div class="ri"
+                     data-tooltip="Administrator">
+
+                    <i>⚙</i>
+                    Administrator
+
+                </div>
+
+
+                <div class="circ"
+                     style="margin-top:8px"
+                     data-tooltip="Add workspace">
+
+                    +
+
+                </div>
+
+
+                <div class="circ"
+                     style="margin-top:10px"
+                     data-tooltip="Theme">
+
+                    ☾
+
+                </div>
+
+
+                <div class="sp"></div>
+
+
+                <div class="me"
+                     data-tooltip="@currentName">
+
+                    ☻
+
+                </div>
+
+            </nav>
+
+
+
+            <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+
+            <aside class="side"
+                   id="side">
+
+
+                <!-- =================================================
+                 WORKSPACE HEADER
+            ================================================== -->
+
+                <div class="sh">
+
+                    <span>
+                        @Model.WorkspaceName
+                    </span>
+
+                    <span>
+                        ⌄
+                    </span>
+
+                    <span>
+                        ⚙ ✎
+                    </span>
+
+                </div>
+
+
+
+                <!-- =================================================
+                 PROMO
+            ================================================== -->
+
+                <div class="promo"
+                     id="promo">
+
+                    <span class="x"
+                          onclick="document.getElementById('promo').classList.add('hide')">
+                        ✕
+                    </span>
+
+                    <span class="gift">
+                        🎁
+                    </span>
+
+                    <h4>
+                        Get 50% off TaskFlow Pro
+                    </h4>
+
+                    <small>
+                        7 days remaining
+                    </small>
+
+                    <button>
+                        🚀 Upgrade to Pro
+                    </button>
+
+                </div>
+
+
+
+                <!-- =================================================
+                 FIND CONVERSATION
+            ================================================== -->
+
+                <div class="find">
+                    ☰ Find a conversation...
+                </div>
+
+
+
+                <div class="sec">
+
+
+                    <!-- =================================================
+                     TEAM CALLS
+                ================================================== -->
+
+                    <div class="it hd">
+
+                        <b>
+                            🎧
+                        </b>
+
+                        Team calls
+
+                    </div>
+
+
+                    <!-- =================================================
+                     DIRECTORIES
+                ================================================== -->
+
+                    <div class="it hd">
+
+                        <b>
+                            ▤
+                        </b>
+
+                        Directories
+
+                    </div>
+
+
+                    <div class="hr"></div>
+
+
+                    <!-- =================================================
+                     FAVORITES
+                ================================================== -->
+
+                    <div class="it hd">
+
+                        <b>
+                            ☆
+                        </b>
+
+                        Favorites
+
+                    </div>
+
+
+                    <div class="hint">
+                        Drag and drop important items here
+                    </div>
+
+
+
+                    <!-- =================================================
+                     CHANNELS
+                ================================================== -->
+
+                    <div class="sidebar-group">
+
+
+                        <!-- Channels header -->
+
+                        <div class="channel-section-header">
+
+
+                            <button type="button"
+                                    class="channel-section-title"
+                                    data-tooltip="Channels">
+
+                                <span class="channel-chevron">
+
+                                    <i class="fa-solid fa-chevron-down"></i>
+
+                                </span>
+
+
+                                <span class="section-icon">
+
+                                    <i class="fa-solid fa-hashtag"></i>
+
+                                </span>
+
+
+                                <span>
+                                    Channels
+                                </span>
+
+                            </button>
+
+
+
+                            <div class="channel-section-actions">
+
+
+                                <button type="button"
+                                        id="addChannelButton"
+                                        class="sidebar-icon-button"
+                                        data-tooltip="Create a channel">
+
+                                    <i class="fa-solid fa-plus"></i>
+
+                                </button>
+
+
+                                <button type="button"
+                                        class="sidebar-icon-button"
+                                        data-tooltip="Browse channels">
+
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                                </button>
+
+
+                                <button type="button"
+                                        class="sidebar-icon-button"
+                                        data-tooltip="More channel options">
+
+                                    <i class="fa-solid fa-ellipsis"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Channel children -->
+
+                        <div class="group-items"
+                             id="channelList">
+
+
+                            <button type="button"
+                                    class="it on"
+                                    data-ch="nouveau-canal">
+
+                                <b>
+                                    #
+                                </b>
+
+                                <span>
+                                    nouveau-canal
+                                </span>
+
+                            </button>
+
+
+                            <button type="button"
+                                    class="it"
+                                    data-ch="social">
+
+                                <b>
+                                    #
+                                </b>
+
+                                <span>
+                                    social
+                                </span>
+
+                            </button>
+
+
+                            <button type="button"
+                                    class="it"
+                                    data-ch="tous-hagiathanh">
+
+                                <b>
+                                    #
+                                </b>
+
+                                <span>
+                                    tous-hagiathanh
+                                </span>
+
+                            </button>
+
+
+                            <button type="button"
+                                    id="addChannelRow"
+                                    class="it add-row"
+                                    data-tooltip="Create a new channel">
+
+                                <b class="small-plus">
+                                    +
+                                </b>
+
+                                <span>
+                                    Add channels
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     DIRECT MESSAGES
+                ================================================== -->
+
+                    <div class="sidebar-group">
+
+
+                        <div class="channel-section-header">
+
+
+                            <button type="button"
+                                    class="channel-section-title"
+                                    data-tooltip="Direct messages">
+
+                                <span class="channel-chevron">
+
+                                    <i class="fa-solid fa-chevron-down"></i>
+
+                                </span>
+
+
+                                <span class="section-icon">
+
+                                    <i class="fa-regular fa-comments"></i>
+
+                                </span>
+
+
+                                <span>
+                                    Direct messages
+                                </span>
+
+                            </button>
+
+
+                            <div class="channel-section-actions">
+
+
+                                <button type="button"
+                                        class="sidebar-icon-button"
+                                        data-tooltip="Start a direct message">
+
+                                    <i class="fa-solid fa-plus"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="group-items"
+                             id="directMessageList">
+
+
+                            <button type="button"
+                                    class="it add-row"
+                                    data-tooltip="Invite people">
+
+                                <b class="small-plus">
+                                    +
+                                </b>
+
+                                <span>
+                                    Invite people
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     APPS
+                ================================================== -->
+
+                    <div class="sidebar-group">
+
+
+                        <div class="channel-section-header">
+
+
+                            <button type="button"
+                                    class="channel-section-title"
+                                    data-tooltip="Apps">
+
+                                <span class="channel-chevron">
+
+                                    <i class="fa-solid fa-chevron-down"></i>
+
+                                </span>
+
+
+                                <span class="section-icon">
+
+                                    <i class="fa-solid fa-circle-nodes"></i>
+
+                                </span>
+
+
+                                <span>
+                                    Apps
+                                </span>
+
+                            </button>
+
+
+                            <div class="channel-section-actions">
+
+
+                                <button type="button"
+                                        class="sidebar-icon-button"
+                                        data-tooltip="Add an app">
+
+                                    <i class="fa-solid fa-plus"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="group-items">
+
+
+                            <button type="button"
+                                    class="it app-row"
+                                    data-tooltip="Slack">
+
+                                <b class="app-icon">
+
+                                    <i class="fa-brands fa-slack"></i>
+
+                                </b>
+
+                                <span>
+                                    TaskFlow
+                                </span>
+
+                                <span class="badge">
+                                    1
+                                </span>
+
+                            </button>
+
+
+
+                            <button type="button"
+                                    class="it add-row"
+                                    data-tooltip="Connect an app">
+
+                                <b class="small-plus">
+                                    +
+                                </b>
+
+                                <span>
+                                    Connect apps
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </aside>
+
+
+
+            <!-- =====================================================
+             MAIN CHANNEL
+        ====================================================== -->
+
+            <main class="main">
+
+
+                <!-- =================================================
+                 CHANNEL HEADER
+            ================================================== -->
+
+                <div class="ch">
+
+
+                    <h2>
+
+                        <span>
+                            ☆
+                        </span>
+
+                        <span id="chname">
+                            # nouveau-canal ✎
+                        </span>
+
+                    </h2>
+
+
+                    <div class="r">
+
+                        <span class="inv">
+                            👤 Invite colleagues
+                        </span>
+
+                        <span>
+                            🎧 ⌄
+                        </span>
+
+                        <span>
+                            🔔
+                        </span>
+
+                        <span>
+                            ⌕
+                        </span>
+
+                        <span>
+                            ⋮
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                 TABS
+            ================================================== -->
+
+                <div class="tabs">
+
+                    <span class="a">
+                        ● Messages
+                    </span>
+
+                    <span class="t">
+                        ▢ Add a canvas
+                    </span>
+
+                    <span class="t">
+                        +
+                    </span>
+
+                </div>
+
+
+
+                <!-- =================================================
+                 CHANNEL CONTENT
+            ================================================== -->
+
+                <div class="scroll"
+                     id="scroll">
+
+
+                    <!-- =================================================
+                     WELCOME
+                ================================================== -->
+
+                    <div class="wel">
+
+                        <h1>
+
+                            <span>
+                                👋
+                            </span>
+
+                            Welcome to your first channel, THANHGIA!
+
+                        </h1>
+
+
+                        <p>
+                            Channels help keep work focused on a specific topic.
+                            You can keep all project-related information in the channel
+                            so everyone can easily access it.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     CARDS
+                ================================================== -->
+
+                    <div class="cards">
+
+
+                        <div class="card c1">
+
+                            <h3>
+                                Use a template
+                            </h3>
+
+                            <p>
+                                Browse channel templates
+                            </p>
+
+                            <div class="il">
+
+                                <div></div>
+                                <div></div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="card c2">
+
+                            <h3>
+                                Connect your apps
+                            </h3>
+
+                            <p>
+                                Integrate your work with TaskFlow
+                            </p>
+
+                            <div class="il"></div>
+
+                        </div>
+
+
+
+                        <div class="card c3">
+
+                            <h3>
+                                Invite colleagues
+                            </h3>
+
+                            <p>
+                                Add your entire team
+                            </p>
+
+
+                            <div class="av"
+                                 style="left:34px;
+                                top:206px;
+                                background:#2f9e6b;
+                                border-radius:10px">
+                            </div>
+
+
+                            <div class="av"
+                                 style="left:122px;
+                                top:184px;
+                                background:#e9605b;
+                                width:62px;
+                                height:66px">
+                            </div>
+
+
+                            <div class="av"
+                                 style="left:74px;
+                                top:268px;
+                                background:#f7a51b;
+                                width:62px;
+                                height:66px;
+                                border-radius:50% 50% 8px 8px">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     DATE
+                ================================================== -->
+
+                    <div class="date">
+
+                        <span>
+                            Friday, August 21 ⌄
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     MESSAGES
+                ================================================== -->
+
+                    <div class="msgs"
+                         id="msgs">
+
+
+                        <div class="msg">
+
+
+                            <div class="av2"></div>
+
+
+                            <div>
+
+                                <div class="n">
+
+                                    THANHGIA
+
+                                    <small>
+                                        20:25
+                                    </small>
+
+                                </div>
+
+
+                                <div class="tx">
+                                    joined #nouveau-canal.
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                 MESSAGE COMPOSER
+            ================================================== -->
+
+                <div class="comp">
+
+
+                    <div class="tb">
+
+                        <b>
+                            B
+                        </b>
+
+                        <i>
+                            I
+                        </i>
+
+                        <u>
+                            U
+                        </u>
+
+                        <s>
+                            S
+                        </s>
+
+                        <span>
+                            |
+                        </span>
+
+                        <span>
+                            🔗
+                        </span>
+
+                        <span>
+                            ≡
+                        </span>
+
+                        <span>
+                            ☰
+                        </span>
+
+                        <span>
+                            |
+                        </span>
+
+                        <span>
+                            ▤
+                        </span>
+
+                        <span>
+                            &lt;/&gt;
+                        </span>
+
+                        <span>
+                            ⌘
+                        </span>
+
+                    </div>
+
+
+                    <div class="in"
+                         id="cin"
+                         contenteditable="true"
+                         data-ph="Send a message to #nouveau-canal">
+                    </div>
+
+
+                    <div class="bt">
+
+                        <span class="pl">
+                            +
+                        </span>
+
+                        <span style="text-decoration:underline">
+                            Aa
+                        </span>
+
+                        <span>
+                            ☺
+                        </span>
+
+                        <span>
+                            @@
+                        </span>
+
+                        <span>
+                            ⋯
+                        </span>
+
+
+                        <span class="snd"
+                              id="snd">
+
+                            ➤
+
+                            <small>
+                                ⌄
+                            </small>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </main>
+
+
+
+            <!-- =====================================================
+             FLOWBOT
+        ====================================================== -->
+
+            <section class="bot"
+                     id="bot">
+
+
+                <!-- =================================================
+                 FLOWBOT HEADER
+            ================================================== -->
+
+                <div class="hd">
+
+
+                    <h2>
+
+
+                        <span class="logo">
+
+                            <i style="left:0;
+                                top:0;
+                                background:#36c5f0">
+                            </i>
+
+                            <i style="right:0;
+                                top:0;
+                                background:#2eb67d">
+                            </i>
+
+                            <i style="left:0;
+                                bottom:0;
+                                background:#e01e5a">
+                            </i>
+
+                            <i style="right:0;
+                                bottom:0;
+                                background:#ecb22e">
+                            </i>
+
+                        </span>
+
+
+                        FlowBot
+
+                    </h2>
+
+
+                    <div class="r">
+
+                        <span>
+                            ⌕
+                        </span>
+
+                        <span>
+                            ⋮
+                        </span>
+
+                        <span onclick="document.getElementById('bot').classList.add('hide')"
+                              style="cursor:pointer">
+
+                            ✕
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                 FLOWBOT TABS
+            ================================================== -->
+
+                <div class="tabs">
+
+                    <span class="a">
+                        ○ Messages
+                    </span>
+
+                    <span class="t">
+                        ▢ Add a canvas
+                    </span>
+
+                    <span class="t">
+                        +
+                    </span>
+
+                </div>
+
+
+
+                <!-- =================================================
+                 FLOWBOT CONTENT
+            ================================================== -->
+
+                <div class="sc"
+                     id="bsc">
+
+
+                    <!-- =================================================
+                     UPGRADE PANEL
+                ================================================== -->
+
+                    <div class="up"
+                         id="up">
+
+
+                        <span class="x"
+                              onclick="document.getElementById('up').classList.toggle('min')">
+                        </span>
+
+
+                        <h3>
+                            Upgrade to use all FlowBot features
+                        </h3>
+
+
+                        <p>
+                            FlowBot has new AI features,
+                            but some advanced capabilities are only available
+                            with certain paid plans.
+                        </p>
+
+
+                        <div class="row">
+
+                            <button>
+                                🚀 Upgrade your plan
+                            </button>
+
+                            <a>
+                                Learn more
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     FLOWBOT TEXT
+                ================================================== -->
+
+                    <div class="btxt"
+                         id="btxt">
+
+
+                        <p>
+                            Need help? Find more
+                            <a>
+                                support
+                            </a>
+                            online!
+                        </p>
+
+
+                        <p>
+                            However, I am not human.
+                            I am just a bot — a simple bot without too many
+                            tricks up my electronic sleeve.
+                            But I’m glad you’re here!
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                 FLOWBOT COMPOSER
+            ================================================== -->
+
+                <div class="comp">
+
+
+                    <div class="tb">
+
+                        <b>
+                            B
+                        </b>
+
+                        <i>
+                            I
+                        </i>
+
+                        <u>
+                            U
+                        </u>
+
+                        <s>
+                            S
+                        </s>
+
+                        <span>
+                            |
+                        </span>
+
+                        <span>
+                            🔗
+                        </span>
+
+                        <span>
+                            ≡
+                        </span>
+
+                        <span>
+                            ☰
+                        </span>
+
+                        <span>
+                            |
+                        </span>
+
+                        <span>
+                            ▤
+                        </span>
+
+                        <span>
+                            &lt;/&gt;
+                        </span>
+
+                        <span>
+                            ⌘
+                        </span>
+
+                    </div>
+
+
+                    <div class="in"
+                         id="bin"
+                         contenteditable="true"
+                         data-ph="Send a message to FlowBot">
+                    </div>
+
+
+                    <div class="bt">
+
+                        <span class="pl">
+                            +
+                        </span>
+
+                        <span style="text-decoration:underline">
+                            Aa
+                        </span>
+
+                        <span>
+                            ☺
+                        </span>
+
+                        <span>
+                            @@
+                        </span>
+
+                        <span>
+                            ⋯
+                        </span>
+
+                        <span class="snd">
+
+                            ➤
+
+                            <small>
+                                ⌄
+                            </small>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ============================================================
+     CREATE CHANNEL MODAL
+============================================================= -->
+
+    <div id="channelModal"
+         class="channel-modal-overlay hidden">
+
+
+        <div class="channel-modal">
+
+
+            <!-- =====================================================
+             STEP 1
+        ====================================================== -->
+
+            <section id="channelStep1"
+                     class="channel-step active">
+
+
+                <button type="button"
+                        class="channel-modal-close"
+                        id="channelModalClose"
+                        data-tooltip="Close">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+
+
+                <div class="channel-modal-header">
+
+                    <h2>
+                        Create a channel
+                    </h2>
+
+                </div>
+
+
+
+                <label class="channel-label">
+                    Name
+                </label>
+
+
+
+                <div class="channel-name-input">
+
+                    <span>
+                        #
+                    </span>
+
+
+                    <input type="text"
+                           id="channelNameInput"
+                           maxlength="80"
+                           autocomplete="off"
+                           placeholder="for example, plan-budget" />
+
+
+                    <span id="channelNameCounter">
+                        80
+                    </span>
+
+                </div>
+
+
+
+                <p class="channel-help">
+                    Channels are where conversations happen
+                    around a specific topic.
+                </p>
+
+
+                <p class="channel-help">
+                    Choose a simple and clear name.
+                </p>
+
+
+
+                <div class="channel-step-footer">
+
+
+                    <span class="channel-step-number">
+                        Step 1 of 2
+                    </span>
+
+
+                    <button type="button"
+                            id="channelNextStep"
+                            class="channel-primary-button">
+
+                        Next
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================================
+             STEP 2
+        ====================================================== -->
+
+            <section id="channelStep2"
+                     class="channel-step">
+
+
+                <button type="button"
+                        class="channel-modal-close"
+                        data-action="close-channel"
+                        data-tooltip="Close">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+
+
+                <div class="channel-modal-header">
+
+                    <h2>
+                        Create a channel
+                    </h2>
+
+
+                    <div id="channelPreviewName"
+                         class="channel-preview-name">
+
+                        # channel
+
+                    </div>
+
+                </div>
+
+
+
+                <h3 class="channel-subtitle">
+                    Visibility
+                </h3>
+
+
+
+                <!-- PUBLIC -->
+
+                <label class="visibility-option">
+
+
+                    <input type="radio"
+                           name="channelVisibility"
+                           value="public"
+                           checked />
+
+
+                    <span class="radio-circle"></span>
+
+
+                    <span class="visibility-copy">
+
+
+                        <strong>
+                            Public
+                        </strong>
+
+
+                        <small>
+                            Anyone in the workspace can find and join this channel.
+                        </small>
+
+                    </span>
+
+                </label>
+
+
+
+                <!-- PRIVATE -->
+
+                <label class="visibility-option">
+
+
+                    <input type="radio"
+                           name="channelVisibility"
+                           value="private" />
+
+
+                    <span class="radio-circle"></span>
+
+
+                    <span class="visibility-copy">
+
+
+                        <strong>
+                            Private
+                        </strong>
+
+
+                        <small>
+                            Only invited people can find and access this channel.
+                        </small>
+
+                    </span>
+
+                </label>
+
+
+
+                <div class="channel-step-footer">
+
+
+                    <button type="button"
+                            id="channelBackStep"
+                            class="channel-secondary-button">
+
+                        Back
+
+                    </button>
+
+
+
+                    <button type="button"
+                            id="channelCreateButton"
+                            class="channel-primary-button">
+
+                        Create
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================================
+             STEP 3
+        ====================================================== -->
+
+            <section id="channelStep3"
+                     class="channel-step">
+
+
+                <button type="button"
+                        class="channel-modal-close"
+                        data-action="close-channel"
+                        data-tooltip="Close">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+
+
+                <div class="channel-modal-header">
+
+
+                    <h2>
+                        Add people or apps
+                    </h2>
+
+
+                    <p id="channelPeopleTitle">
+                        Add people to your new channel.
+                    </p>
+
+                </div>
+
+
+
+                <!-- SEARCH PEOPLE -->
+
+                <div class="channel-people-search">
+
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                    <input type="text"
+                           id="channelPeopleSearch"
+                           autocomplete="off"
+                           placeholder="Search by name or email" />
+
+                </div>
+
+
+
+                <!-- RESULTS -->
+
+                <div id="channelPeopleResults"
+                     class="channel-people-results">
+                </div>
+
+
+
+                <!-- SELECTED PEOPLE -->
+
+                <div id="channelSelectedPeople"
+                     class="channel-selected-people">
+                </div>
+
+
+
+                <!-- AUTO ADD -->
+
+                <div class="channel-admin-box">
+
+
+                    <div>
+
+
+                        <strong>
+                            Automatically add new members
+                        </strong>
+
+
+                        <span>
+                            Workspace admins can control this setting.
+                        </span>
+
+                    </div>
+
+
+
+                    <label class="channel-switch">
+
+
+                        <input type="checkbox"
+                               id="channelAutoAdd" />
+
+
+                        <span></span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- FOOTER -->
+
+                <div class="channel-step-footer">
+
+
+                    <button type="button"
+                            id="skipChannelPeople"
+                            class="channel-secondary-button">
+
+                        Skip for now
+
+                    </button>
+
+
+
+                    <button type="button"
+                            id="finishChannelButton"
+                            class="channel-primary-button">
+
+                        Done
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ============================================================
+     JAVASCRIPT
+============================================================= -->
+
+    <script src="~/js/workspace.js"></script>
+
+    <script src="~/js/Workspace_io/channel-create.js"
+            asp-append-version="true">
+    </script>
+
+</body>
+</html>

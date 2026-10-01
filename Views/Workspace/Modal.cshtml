@@ -1,0 +1,369 @@
+﻿<!-- ============================================================
+     CREATE CHANNEL MODAL
+============================================================= -->
+
+<div id="channelModal"
+     class="channel-modal-overlay hidden">
+
+
+    <div class="channel-modal">
+
+
+        <!-- =====================================================
+             STEP 1
+        ====================================================== -->
+
+        <section id="channelStep1"
+                 class="channel-step active">
+
+
+            <button type="button"
+                    class="channel-modal-close"
+                    id="channelModalClose"
+                    data-tooltip="Close">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+
+            <div class="channel-modal-header">
+
+                <h2>
+                    Create a channel
+                </h2>
+
+            </div>
+
+
+
+            <label class="channel-label">
+                Name
+            </label>
+
+
+
+            <div class="channel-name-input">
+
+                <span>
+                    #
+                </span>
+
+
+                <input type="text"
+                       id="channelNameInput"
+                       maxlength="80"
+                       autocomplete="off"
+                       placeholder="for example, plan-budget" />
+
+
+                <span id="channelNameCounter">
+                    80
+                </span>
+
+            </div>
+
+
+
+            <p class="channel-help">
+                Channels are where conversations happen
+                around a specific topic.
+            </p>
+
+
+            <p class="channel-help">
+                Choose a simple and clear name.
+            </p>
+
+
+
+            <div class="channel-step-footer">
+
+
+                <span class="channel-step-number">
+                    Step 1 of 2
+                </span>
+
+
+                <button type="button"
+                        id="channelNextStep"
+                        class="channel-primary-button">
+
+                    Next
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             STEP 2
+        ====================================================== -->
+
+        <section id="channelStep2"
+                 class="channel-step">
+
+
+            <button type="button"
+                    class="channel-modal-close"
+                    data-action="close-channel"
+                    data-tooltip="Close">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+
+            <div class="channel-modal-header">
+
+                <h2>
+                    Create a channel
+                </h2>
+
+
+                <div id="channelPreviewName"
+                     class="channel-preview-name">
+
+                    # channel
+
+                </div>
+
+            </div>
+
+
+
+            <h3 class="channel-subtitle">
+                Visibility
+            </h3>
+
+
+
+            <!-- PUBLIC -->
+
+            <label class="visibility-option">
+
+
+                <input type="radio"
+                       name="channelVisibility"
+                       value="public"
+                       checked />
+
+
+                <span class="radio-circle"></span>
+
+
+                <span class="visibility-copy">
+
+
+                    <strong>
+                        Public
+                    </strong>
+
+
+                    <small>
+                        Anyone in the workspace can find and join this channel.
+                    </small>
+
+                </span>
+
+            </label>
+
+
+
+            <!-- PRIVATE -->
+
+            <label class="visibility-option">
+
+
+                <input type="radio"
+                       name="channelVisibility"
+                       value="private" />
+
+
+                <span class="radio-circle"></span>
+
+
+                <span class="visibility-copy">
+
+
+                    <strong>
+                        Private
+                    </strong>
+
+
+                    <small>
+                        Only invited people can find and access this channel.
+                    </small>
+
+                </span>
+
+            </label>
+
+
+
+            <div class="channel-step-footer">
+
+
+                <button type="button"
+                        id="channelBackStep"
+                        class="channel-secondary-button">
+
+                    Back
+
+                </button>
+
+
+
+                <button type="button"
+                        id="channelCreateButton"
+                        class="channel-primary-button">
+
+                    Create
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             STEP 3
+        ====================================================== -->
+
+        <section id="channelStep3"
+                 class="channel-step">
+
+
+            <button type="button"
+                    class="channel-modal-close"
+                    data-action="close-channel"
+                    data-tooltip="Close">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+
+            <div class="channel-modal-header">
+
+
+                <h2>
+                    Add people or apps
+                </h2>
+
+
+                <p id="channelPeopleTitle">
+                    Add people to your new channel.
+                </p>
+
+            </div>
+
+
+
+            <!-- SEARCH PEOPLE -->
+
+            <div class="channel-people-search">
+
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                <input type="text"
+                       id="channelPeopleSearch"
+                       autocomplete="off"
+                       placeholder="Search by name or email" />
+
+            </div>
+
+
+
+            <!-- RESULTS -->
+
+            <div id="channelPeopleResults"
+                 class="channel-people-results">
+            </div>
+
+
+
+            <!-- SELECTED PEOPLE -->
+
+            <div id="channelSelectedPeople"
+                 class="channel-selected-people">
+            </div>
+
+
+
+            <!-- AUTO ADD -->
+
+            <div class="channel-admin-box">
+
+
+                <div>
+
+
+                    <strong>
+                        Automatically add new members
+                    </strong>
+
+
+                    <span>
+                        Workspace admins can control this setting.
+                    </span>
+
+                </div>
+
+
+
+                <label class="channel-switch">
+
+
+                    <input type="checkbox"
+                           id="channelAutoAdd" />
+
+
+                    <span></span>
+
+                </label>
+
+            </div>
+
+
+
+            <!-- FOOTER -->
+
+            <div class="channel-step-footer">
+
+
+                <button type="button"
+                        id="skipChannelPeople"
+                        class="channel-secondary-button">
+
+                    Skip for now
+
+                </button>
+
+
+
+                <button type="button"
+                        id="finishChannelButton"
+                        class="channel-primary-button">
+
+                    Done
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</div>

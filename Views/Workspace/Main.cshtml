@@ -1,0 +1,65 @@
+﻿@model TASKFLOW_AI.Models._1_Workspace.WorkspacePageViewModel
+@{
+    ViewData["Title"] = "TaskFlow Workspace";
+    Layout = null;
+
+    var currentName = string.IsNullOrWhiteSpace(Model.CurrentUserName)
+        ? "User"
+        : Model.CurrentUserName.Trim();
+
+    var currentInitials = currentName
+        .Substring(0, Math.Min(2, currentName.Length))
+        .ToUpper();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>@Model.WorkspaceName (channel) - TaskFlow</title>
+
+    <link rel="stylesheet" href="~/css/Workspace/_Main.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/Workspace/_Header.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/Workspace/_Sidebar.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/Workspace/_Content.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/Workspace/_Channel.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/Workspace/_Chat.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/Workspace/_FlowBot.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/Workspace/_Modal.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/Workspace/_Task.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/Workspace/_Project.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/Workspace/_Meeting.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/Workspace/_Responsive.css" asp-append-version="true">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+          integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <div class="app">
+        @await Html.PartialAsync("Header", Model)
+
+        <div class="body">
+            @await Html.PartialAsync("Sidebar", Model)
+            @await Html.PartialAsync("Content", Model)
+            @await Html.PartialAsync("FlowBot", Model)
+        </div>
+    </div>
+
+    @await Html.PartialAsync("Modal", Model)
+
+    <script src="~/js/Workspace/Main.js" asp-append-version="true"></script>
+    <script src="~/js/Workspace/Header.js" asp-append-version="true"></script>
+    <script src="~/js/Workspace/Sidebar.js" asp-append-version="true"></script>
+    <script src="~/js/Workspace/Navigation.js" asp-append-version="true"></script>
+    <script src="~/js/Workspace/Channel.js" asp-append-version="true"></script>
+    <script src="~/js/Workspace/Chat.js" asp-append-version="true"></script>
+    <script src="~/js/Workspace/FlowBot.js" asp-append-version="true"></script>
+    <script src="~/js/Workspace/Modal.js" asp-append-version="true"></script>
+    <script src="~/js/Workspace/Task.js" asp-append-version="true"></script>
+    <script src="~/js/Workspace/Project.js" asp-append-version="true"></script>
+    <script src="~/js/Workspace/Meeting.js" asp-append-version="true"></script>
+</body>
+</html>
