@@ -1,6 +1,7 @@
 /* ===== Ngày + tin nhắn ===== */
 .date {
     display: flex;
+    align-items: center;
     justify-content: center;
     border-top: 1px solid var(--line);
     position: relative;
@@ -8,7 +9,7 @@
 }
 
     .date span {
-        position: absolute;
+    position: absolute;
         top: -19px;
         background: #fff;
         border: 1px solid #ccc;
@@ -17,11 +18,11 @@
         font-size: 16px;
         font-weight: 700;
         cursor: pointer
-    }
+}
 
 .msgs {
     padding: 40px 24px 8px
-}
+    }
 
 .msg {
     display: flex;
@@ -45,10 +46,10 @@
         display: block;
         width: 16px;
         height: 16px;
-        border-radius: 50%;
+    border-radius: 50%;
         background: #1fb5b0;
         margin-top: -6px
-    }
+}
 
     .av2:after {
         content: "";
@@ -77,10 +78,10 @@
 
 .msg .tx {
     font-size: 17.5px;
-    line-height: 1.4;
+        line-height: 1.4;
     color: #3b3a3b;
     margin-top: 2px
-}
+    }
 
 /* ===== Khung soạn tin ===== */
 .comp {
@@ -92,14 +93,14 @@
 }
 
     .comp .tb {
-        display: flex;
+    display: flex;
         gap: 22px;
         padding: 12px 16px;
         background: #f8f8f8;
         border-radius: 10px 10px 0 0;
         color: #8b8a8b;
         font-size: 19px
-    }
+}
 
     .comp .in {
         padding: 14px 16px 10px;
@@ -115,11 +116,11 @@
         .comp .in:empty:before {
             content: attr(data-ph);
             color: #616061
-        }
+}
 
     .comp .bt {
-        display: flex;
-        align-items: center;
+    display: flex;
+    align-items: center;
         gap: 20px;
         padding: 6px 14px 10px;
         color: #3b3a3b;
@@ -127,20 +128,54 @@
     }
 
         .comp .bt .pl {
-            width: 34px;
-            height: 34px;
+    width: 34px;
+    height: 34px;
             border-radius: 50%;
             background: #f0f0f0;
-            display: grid;
-            place-items: center;
+    display: grid;
+    place-items: center;
             font-size: 26px
-        }
+    }
 
         .comp .bt .snd {
             margin-left: auto;
             color: #aaa;
-            cursor: pointer;
-            display: flex;
+        cursor: pointer;
+        transition: .2s;
+    }
+
+        .channel-switch span::after {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 19px;
+            height: 19px;
+            border-radius: 50%;
+            background: #fff;
+            transition: .2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,.18);
+        }
+
+    .channel-switch input:checked + span {
+        background: #3155d9;
+    }
+
+        .channel-switch input:checked + span::after {
+            transform: translateX(21px);
+        }
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.channel-step-footer {
+    position: absolute;
+    left: 34px;
+    right: 34px;
+    bottom: 20px;
+    display: flex;
             gap: 10px;
             align-items: center
-        }
+}

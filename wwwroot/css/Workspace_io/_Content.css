@@ -1,7 +1,50 @@
 /* ===== Khung kênh chính ===== */
 .main {
-    flex: 1;
+        flex: 1;
     min-width: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    padding: 13px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+    .visibility-option:hover {
+        background: #f6f3f7;
+    }
+
+    .visibility-option input {
+        position: absolute;
+        opacity: 0;
+    }
+
+.radio-circle {
+    width: 20px;
+    height: 20px;
+    border: 1.7px solid #807980;
+    border-radius: 50%;
+    margin-top: 2px;
+    flex: 0 0 20px;
+    position: relative;
+}
+
+.visibility-option input:checked + .radio-circle {
+    border-color: #2d69c4;
+}
+
+    .visibility-option input:checked + .radio-circle::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        left: 3px;
+        top: 3px;
+        border-radius: 50%;
+        background: #2d69c4;
+    }
+
+.visibility-copy {
     display: flex;
     flex-direction: column;
     background: var(--panel);
@@ -21,26 +64,33 @@
 
     .ch h2 {
         font-size: 22px;
-        font-weight: 800;
+    font-weight: 800;
         color: #3b3a3b;
-        display: flex;
+    display: flex;
         gap: 14px;
         align-items: center
-    }
+}
 
     .ch .r {
-        display: flex;
-        align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 9px;
+}
+
+.channel-person-chip {
+    display: inline-flex;
+    align-items: center;
         gap: 24px;
         font-size: 20px;
         color: #3b3a3b
-    }
+}
 
         .ch .r .inv {
             font-size: 16px;
             font-weight: 600;
             color: #3b3a3b
-        }
+    }
 
 .tabs {
     display: flex;
@@ -60,13 +110,15 @@
         display: flex;
         align-items: center;
         gap: 8px
-    }
+        }
 
     .tabs .t {
         color: #3b3a3b;
         font-weight: 600;
-        display: flex;
-        gap: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
         align-items: center
     }
 

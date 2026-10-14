@@ -22,7 +22,7 @@
     font-size: 24px;
     font-weight: 800;
     margin-bottom: 14px
-}
+    }
 
 .ri {
     display: flex;
@@ -44,7 +44,7 @@
         display: grid;
         place-items: center;
         font-size: 23px
-    }
+}
 
     .ri.on i {
         background: rgba(255,255,255,.28)
@@ -67,7 +67,7 @@
     place-items: center;
     font-size: 24px;
     margin-bottom: 14px
-}
+    }
 
 .me {
     width: 46px;
@@ -95,7 +95,7 @@
 
     .side::-webkit-scrollbar {
         display: none
-    }
+}
 
 .sh {
     display: flex;
@@ -109,7 +109,7 @@
     top: 0;
     background: var(--side);
     z-index: 2
-}
+    }
 
     .sh span {
         font-size: 22px;
@@ -140,12 +140,12 @@
     }
 
     .promo .x {
-        position: absolute;
+    position: absolute;
         right: 18px;
         top: 16px;
-        cursor: pointer;
+    cursor: pointer;
         font-size: 18px
-    }
+}
 
     .promo .gift {
         position: absolute;
@@ -213,14 +213,14 @@
 
     .it.hd {
         color: #e8dcea
-    }
+        }
 
 .hint {
     padding: 6px 20px 14px 28px;
     font-size: 15px;
     color: #dfcfe0;
     font-weight: 600
-}
+    }
 
 .hr {
     height: 1px;
@@ -254,8 +254,12 @@
 .side {
     background: var(--side) !important;
     color: #fff !important;
-}
+    }
 
+    .visibility-option input {
+        position: absolute;
+        opacity: 0;
+    }
 
 /* ---------- SECTION ---------- */
 
@@ -265,6 +269,16 @@
     background: transparent !important;
 }
 
+    .visibility-option input:checked + .radio-circle::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        left: 3px;
+        top: 3px;
+        border-radius: 50%;
+        background: #2d69c4;
+    }
 
 /* ---------- SECTION HEADER ---------- */
 
@@ -292,12 +306,17 @@
     background: transparent !important;
     color: rgba(255,255,255,.92);
     font: inherit;
-    font-size: 14px;
+        font-size: 14px;
     font-weight: 700;
     cursor: pointer;
     text-align: left;
-}
+    }
 
+    .visibility-copy small {
+        color: #777078;
+        font-size: 12px;
+        line-height: 1.4;
+    }
 
 /* ---------- CHEVRON ---------- */
 
@@ -311,6 +330,10 @@
     font-size: 8px;
 }
 
+    .channel-people-search:focus-within {
+        border-color: #2f67bd;
+        box-shadow: 0 0 0 4px rgba(49,85,217,.12);
+    }
 
 /* ---------- SECTION ICON ---------- */
 
@@ -321,9 +344,9 @@
     align-items: center;
     justify-content: center;
     color: rgba(255,255,255,.88);
-    font-size: 13px;
+        font-size: 13px;
     flex: 0 0 18px;
-}
+    }
 
 
 /* ---------- ACTION BUTTONS ---------- */
@@ -351,12 +374,28 @@
     font-size: 12px;
 }
 
+    .channel-person:hover {
+        background: #f6f3f7;
+    }
 
     .sidebar-icon-button:hover {
         background: var(--side-hover) !important;
-        color: #fff;
-    }
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+}
 
+.channel-person-copy {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+    .channel-person-copy strong {
+        font-size: 11px;
+    }
 
 /* =========================================================
    CHILD CONTAINER
@@ -370,14 +409,14 @@
 }
 
 
-    /* =========================================================
+/* =========================================================
    CHILD ITEM
 ========================================================= */
 
     .group-items .it {
         width: 100%;
         min-height: 36px;
-        display: flex;
+    display: flex;
         align-items: center;
         gap: 10px;
         padding: 0 10px 0 38px !important;
@@ -391,7 +430,7 @@
         cursor: pointer;
         text-align: left;
         box-shadow: none !important;
-    }
+}
 
 
         /* hover */
@@ -399,10 +438,10 @@
         .group-items .it:hover {
             background: var(--side-hover) !important;
             color: #fff !important;
-        }
+    }
 
 
-        /* =========================================================
+/* =========================================================
    ACTIVE CHANNEL
 ========================================================= */
 
@@ -411,8 +450,13 @@
             color: #fff !important;
             font-weight: 700;
             box-shadow: none !important;
-        }
+}
 
+    .channel-admin-box > div {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
 
         /* =========================================================
    HASHTAG
@@ -428,24 +472,41 @@
             color: inherit;
             font-size: 16px;
             font-weight: 400;
-        }
+    }
 
 
-    /* =========================================================
+/* =========================================================
    ADD CHANNEL / INVITE / CONNECT
 ========================================================= */
 
     .group-items .add-row {
         color: rgba(255,255,255,.74) !important;
         background: transparent !important;
-    }
+}
 
+    .channel-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
 
         .group-items .add-row:hover {
             color: #fff !important;
             background: var(--side-hover) !important;
-        }
+    }
 
+        .channel-switch span::after {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 19px;
+            height: 19px;
+            border-radius: 50%;
+            background: #fff;
+            transition: .2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,.18);
+        }
 
 /* ---------- PLUS ---------- */
 
@@ -461,7 +522,7 @@
     color: #fff !important;
     font-size: 15px !important;
     line-height: 1;
-}
+        }
 
 
 /* =========================================================
@@ -474,11 +535,24 @@
     background: transparent !important;
 }
 
+.channel-primary-button,
+.channel-secondary-button {
+    min-width: 92px;
+    height: 38px;
+    padding: 0 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 750;
+}
 
     .group-items .app-row:hover {
         background: var(--side-hover) !important;
-    }
+}
 
+    .channel-primary-button:hover {
+        background: #2748bd;
+    }
 
 /* app icon */
 
@@ -492,7 +566,7 @@
     background: transparent !important;
     color: #fff !important;
     font-size: 15px !important;
-}
+    }
 
 
 /* =========================================================
@@ -512,7 +586,7 @@
     color: #1B4F93 !important;
     font-size: 10px;
     font-weight: 800;
-}
+    }
 
 
 /* =========================================================
@@ -527,6 +601,14 @@
     background-color: transparent !important;
 }
 
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .channel-modal {
+        width: calc(100vw - 24px);
+    }
 
 /* =========================================================
    KEEP SIDEBAR BLUE EVEN WITH OTHER CSS

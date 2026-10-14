@@ -7,7 +7,7 @@
         font-weight: 900;
         line-height: 1.15;
         letter-spacing: -.5px
-    }
+}
 
     .wel p {
         font-size: 20px;
@@ -38,7 +38,7 @@
     .card h3 {
         font-size: 19px;
         font-weight: 800
-    }
+}
 
     .card p {
         font-size: 15px;
@@ -54,11 +54,11 @@
 
 .c2 {
     background: #c4f0fc
-}
+    }
 
 .c3 {
     background: #f8dffa
-}
+    }
 
 .c1 .il {
     position: absolute;
@@ -72,29 +72,29 @@
 }
 
     .c1 .il div {
-        background: #fff;
+    background: #fff;
         height: 78px;
         width: 100px;
         border-radius: 6px;
         display: inline-block;
         margin-right: 8px;
         position: relative
-    }
+}
 
         .c1 .il div:before {
             content: "";
-            position: absolute;
+        position: absolute;
             left: 10px;
             top: 10px;
             width: 24px;
             height: 24px;
-            border-radius: 50%;
+    border-radius: 50%;
             background: #0a7b4c
-        }
+}
 
         .c1 .il div:after {
-            content: "";
-            position: absolute;
+        content: "";
+        position: absolute;
             left: 44px;
             top: 16px;
             width: 44px;
@@ -102,10 +102,10 @@
             background: #ddd;
             border-radius: 3px;
             box-shadow: 0 14px 0 #ddd,-34px 30px 0 #ddd
-        }
+    }
 
 .c2 .il {
-    position: absolute;
+        position: absolute;
     left: 8px;
     top: 170px;
     width: 260px;
@@ -114,19 +114,19 @@
     transform: skewY(-28deg) skewX(30deg) scale(.95);
     border-radius: 4px;
     box-shadow: 0 12px 0 #9ad1e3
-}
+    }
 
     .c2 .il:after {
-        content: "";
-        position: absolute;
+            content: "";
+            position: absolute;
         inset: 14px;
         background: #e6f6fb;
         border-radius: 3px;
         opacity: .9
-    }
+}
 
 .c3 .av {
-    position: absolute;
+        position: absolute;
     width: 48px;
     height: 60px;
     border-radius: 8px
